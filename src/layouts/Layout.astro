@@ -1,0 +1,17 @@
+---
+import "../styles/global.css";
+
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <slot name="meta" />
+  </head>
+  <body>
+    <Header />
+    <Footer />
+  </body>
+</html>
