@@ -12,6 +12,9 @@ import Footer from "../components/Footer.astro";
   </head>
   <body>
     <Header />
+    <main class="container">
+      <slot name="main" />
+    </main>
     <Footer />
   </body>
 </html>
