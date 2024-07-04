@@ -1,8 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Meta from '../components/Meta.astro';
+import Layout from "../layouts/Layout.astro";
+import Meta from "../components/Meta.astro";
+import PageList from "../components/page/PageList.astro";
 ---
 
 <Layout>
-	<Meta slot="meta"/>
+  <Meta slot="meta" />
+  <PageList slot="main"/>
 </Layout>
