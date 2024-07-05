@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Meta from "../../components/Meta.astro";
+import Page from "../../components/page/Page.astro";
 
 import { getCollection } from "astro:content";
 
@@ -14,12 +15,9 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 const { post } = Astro.props;
-const { Content } = await post.render();
-console.log(post);
 ---
 
-<!-- TODO: mdx 파일 동적라우팅 해서 렌더링하기 -->
 <Layout>
   <Meta slot="meta" />
-  <Content slot="main" />
+  <Page slot="main" post={post} />
 </Layout>
