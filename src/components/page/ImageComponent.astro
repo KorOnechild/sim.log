@@ -1,17 +1,39 @@
 ---
 import { Image } from "astro:assets";
 
-const { imagePath, altText, route } = Astro.props;
+const { post, imagePath, altText, route } = Astro.props;
 ---
 
 <!-- TODO: - <Picture />을 사용한 이미지 최적화 --><!--       - 반응형 이미지 작성 -->
-<a href={`/posts/${route}`}>
-  <figure class="thumbnail">
-    <Image src={imagePath()} alt={altText} />
-  </figure>
+<a href={`/posts/${post.data.slug}`}>
+  <div class="opacity-box"></div>
+  {
+    imagePath ? (
+      <figure class="thumbnail">
+        <Image src={imagePath()} alt={post.data.title} />
+      </figure>
+    ) : (
+      <div class="thumbnail">{post.data.thumbnail}</div>
+    )
+  }
 </a>
 
 <style>
+  a {
+    position: relative;
+  }
+
+  .opacity-box {
+    position: absolute;
+    min-width: 250px;
+    height: 160px;
+    border-radius: 10px;
+    background-color: black;
+    opacity: 0;
+  }
+  .opacity-box:hover {
+    opacity: 0.3;
+  }
   .thumbnail {
     margin: 0;
     background-color: grey;
@@ -20,12 +42,21 @@ const { imagePath, altText, route } = Astro.props;
     border-radius: 10px;
   }
 
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+    font-weight: 600;
+  }
+
   .thumbnail:hover {
-    box-shadow:
+    /* box-shadow:
       0 1px 1px rgba(0, 0, 0, 0.11),
       0 2px 2px rgba(0, 0, 0, 0.11),
       0 4px 4px rgba(0, 0, 0, 0.11),
       0 6px 8px rgba(0, 0, 0, 0.11),
-      0 8px 16px rgba(0, 0, 0, 0.11);
+      0 8px 16px rgba(0, 0, 0, 0.11); */
   }
 </style>

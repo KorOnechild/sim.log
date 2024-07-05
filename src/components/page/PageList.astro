@@ -13,6 +13,7 @@ const images = import.meta.glob("../../assets/*.svg");
   posts.map((post) => (
     <article class="post-item">
       <ImageComponent
+        post={post}
         imagePath={images[post.data.cover]}
         altText={post.data.title}
         route={post.data.slug}
@@ -40,13 +41,6 @@ const images = import.meta.glob("../../assets/*.svg");
     #title {
       width: fit-content;
       border-bottom: 2px solid transparent;
-    }
-    a {
-      text-decoration: none;
-    }
-
-    a:visited {
-      color: black;
     }
 
     a:hover {
