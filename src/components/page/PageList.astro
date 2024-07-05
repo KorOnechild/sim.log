@@ -1,16 +1,74 @@
 ---
 import { getCollection } from "astro:content";
+import ImageComponent from "./ImageComponent.astro";
 
-const posts = await getCollection('posts');
+// 전체 포스트(.md) 불러오기
+const posts = await getCollection("posts");
+
+// 프로젝트 내부 전체 이미지 불러오기
+const images = import.meta.glob("../../assets/*.svg");
 ---
 
 {
   posts.map((post) => (
-    <article>
-      <a href={`/posts/${post.data.slug}`}>
-        <h2>{post.data.title}</h2>
-      </a>
-      <p>{post.data.description}</p>
+    <article class="post-item">
+      <ImageComponent
+        imagePath={images[post.data.cover]}
+        altText={post.data.title}
+        route={post.data.slug}
+      />
+      <div class="info-container">
+        <a href={`/posts/${post.data.slug}`}>
+          <h2 id="title">{post.data.title}</h2>
+        </a>
+        <div class="date">{post.data.date}</div>
+        <div class="desc">{post.data.description}</div>
+      </div>
     </article>
   ))
 }
+
+<style>
+  .post-item {
+    margin-top: 20px;
+    display: flex;
+  }
+
+  .info-container {
+    margin-left: 3%;
+    flex: 1;
+    #title {
+      width: fit-content;
+      border-bottom: 2px solid transparent;
+    }
+    a {
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: black;
+    }
+
+    a:hover {
+      #title {
+        animation-duration: 2s;
+        animation-name: rainbowBorder;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    .date {
+      color: grey;
+    }
+
+    .desc {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+  }
+</style>

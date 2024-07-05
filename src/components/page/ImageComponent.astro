@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+
+const { imagePath, altText, route } = Astro.props;
+---
+
+<!-- TODO: - <Picture />을 사용한 이미지 최적화 --><!--       - 반응형 이미지 작성 -->
+<a href={`/posts/${route}`}>
+  <figure class="thumbnail">
+    <Image src={imagePath()} alt={altText} />
+  </figure>
+</a>
+
+<style>
+  .thumbnail {
+    margin: 0;
+    background-color: grey;
+    min-width: 250px;
+    height: 160px;
+    border-radius: 10px;
+  }
+
+  .thumbnail:hover {
+    box-shadow:
+      0 1px 1px rgba(0, 0, 0, 0.11),
+      0 2px 2px rgba(0, 0, 0, 0.11),
+      0 4px 4px rgba(0, 0, 0, 0.11),
+      0 6px 8px rgba(0, 0, 0, 0.11),
+      0 8px 16px rgba(0, 0, 0, 0.11);
+  }
+</style>
