@@ -12,18 +12,13 @@ const images = import.meta.glob("../../assets/*.svg");
 {
   posts.map((post) => (
     <article class="post-item">
-      <ImageComponent
-        post={post}
-        imagePath={images[post.data.cover]}
-        altText={post.data.title}
-        route={post.data.slug}
-      />
+      <ImageComponent post={post} imagePath={images[post.data.cover]} />
       <div class="info-container">
         <a href={`/posts/${post.data.slug}`}>
           <h2 id="title">{post.data.title}</h2>
         </a>
         <div class="date">{post.data.date}</div>
-        <div class="desc">{post.data.description}</div>
+        <p class="desc">{post.data.description}</p>
       </div>
     </article>
   ))
@@ -33,35 +28,40 @@ const images = import.meta.glob("../../assets/*.svg");
   .post-item {
     margin-top: 20px;
     display: flex;
+    max-height: 160px;
   }
 
   .info-container {
     margin-left: 3%;
     flex: 1;
+
+    * {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     #title {
+      font-size: x-large;
       width: fit-content;
       border-bottom: 2px solid transparent;
-    }
-
-    a:hover {
-      #title {
-        animation-duration: 2s;
-        animation-name: rainbowBorder;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-      }
-    }
-
-    h2 {
+      animation-duration: 2s;
+      animation-name: rainbowColor;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
       margin: 0;
+      max-height: 1.3em;
     }
 
     .date {
       color: grey;
+      margin-top: 5px;
+      font-size: 0.95em;
     }
 
     .desc {
-      font-size: 20px;
+      max-height: calc(1.5em * 2);
+      line-height: 1.5;
+      font-size: 19px;
       margin-top: 10px;
     }
   }
