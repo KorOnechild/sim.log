@@ -19,12 +19,17 @@ a {
   text-decoration: none;
 }
 
-.container {
+.page.container {
+  width: 100%;
+}
+
+.home.container {
   margin-top: 90px;
 }
 
 .nav-container,
 .container,
+.markdown,
 .footer {
   width: 45%;
   margin-left: auto;
@@ -33,7 +38,8 @@ a {
 
 /* nav바, 로고, 게시글 제목 색상 애니메이션 */
 header a:hover,
-.info-container > a > #title:hover {
+.info-container > a > #title:hover,
+.sb-cate:hover {
   background: linear-gradient(
     -70deg,
     /* #43ff2a, */ #ffc52a,

@@ -17,7 +17,7 @@ const { slug } = Astro.params;
 const { post } = Astro.props;
 ---
 
-<Layout>
+<Layout page="page">
   <Meta slot="meta" />
   <Page slot="main" post={post} />
 </Layout>

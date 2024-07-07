@@ -4,6 +4,8 @@ import "../styles/markdown.css";
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+
+const { page } = Astro.props;
 ---
 
 <!doctype html>
@@ -13,7 +15,7 @@ import Footer from "../components/Footer.astro";
   </head>
   <body>
     <Header />
-    <main class="container">
+    <main class=`${page} container`>
       <slot name="main" />
     </main>
     <Footer />
