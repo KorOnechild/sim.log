@@ -28,6 +28,7 @@ a {
 }
 
 .nav-container,
+.page-nav-container,
 .container,
 .markdown,
 .footer {
@@ -39,6 +40,9 @@ a {
 /* nav바, 로고, 게시글 제목 색상 애니메이션 */
 header a:hover,
 .info-container > a > #title:hover,
+.date-cate > a:hover,
+.page-nav-container > a:hover,
+.nav-num > a:hover,
 .sb-cate:hover {
   background: linear-gradient(
     -70deg,
