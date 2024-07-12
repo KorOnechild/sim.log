@@ -1,7 +1,56 @@
 ---
 const { post } = Astro.props;
 const { Content } = await post.render();
+
+const subjectColor = {
+  CSS: "#264de4",
+  HTML: "#E34F26",
+  MarkDown: "black",
+};
 ---
+
+<div
+  class="subject-container"
+  style=`background-color:${subjectColor[post.data.category]}`
+>
+  <div class="subject">
+    {post.data.title}
+  </div>
+  <div class="sb-date">
+    {post.data.date}
+  </div>
+  <!-- TODO: a태그로 카테고리 목록으로 이동 -->
+  <div class="sb-cate">
+    {post.data.category}
+  </div>
+</div>
 <div class="markdown">
   <Content />
 </div>
+
+<style>
+  .subject-container {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 40px;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bold;
+    color: white;
+    text-shadow: black 1px 1px 7px;
+    box-shadow: 0 1px 10px black;
+  }
+
+  .subject {
+    font-size: 2.5em;
+  }
+
+  .sb-date {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+</style>
