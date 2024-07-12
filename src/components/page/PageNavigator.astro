@@ -1,0 +1,88 @@
+---
+const { page } = Astro.props;
+
+const pageNum = [];
+const currentPage = page.currentPage;
+const lastPage = page.lastPage;
+
+const getPageNum = (lastPage) => {
+  for (let i = 1; i <= lastPage; i++) {
+    pageNum.push(i);
+  }
+};
+
+getPageNum(lastPage);
+---
+
+<div class="page-navigator-container">
+  {
+    currentPage - 1 === 0 ? (
+      <div id="unavailable" class="arrow">
+        {"<"}
+      </div>
+    ) : (
+      <a
+        href={currentPage - 1 === 0 ? `/` : `/pages/${currentPage - 1}`}
+        class="arrow"
+      >
+        {"<"}
+      </a>
+    )
+  }
+  <div class="nav-num">
+    {
+      pageNum.map((i) => (
+        <a href={`/pages/${i}`} class={i === currentPage ? "current-page" : ""}>
+          {i}
+        </a>
+      ))
+    }
+  </div>
+  {
+    currentPage === lastPage ? (
+      <div id="unavailable" class="arrow">
+        {">"}
+      </div>
+    ) : (
+      <a
+        href={
+          currentPage === lastPage
+            ? `/pages/${lastPage}`
+            : `/pages/${currentPage + 1}`
+        }
+        class="arrow"
+      >
+        {">"}
+      </a>
+    )
+  }
+</div>
+
+<style>
+  .current-page {
+    font-weight: bold;
+  }
+  .page-navigator-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  a {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: black;
+  }
+
+  .nav-num {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .arrow {
+    font-weight: bold;
+  }
+
+  #unavailable {
+    color: #e0e0e0;
+  }
+</style>

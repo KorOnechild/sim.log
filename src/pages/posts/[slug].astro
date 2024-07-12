@@ -2,22 +2,28 @@
 import Layout from "../../layouts/Layout.astro";
 import Meta from "../../components/Meta.astro";
 import Page from "../../components/page/Page.astro";
+import PageNav from "../../components/page/PageNav.astro";
 
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
-  return posts.map((post) => ({
+  return posts.map((post, i) => ({
     params: { slug: post.slug },
-    props: { post },
+    props: {
+      post: post,
+      posts: posts,
+      prev: i - 1 < 0 ? null : i - 1,
+      next: i + 1 > posts.length - 1 ? null : i + 1,
+    },
   }));
 }
 
-const { slug } = Astro.params;
-const { post } = Astro.props;
+const { post, posts, prev, next } = Astro.props;
 ---
 
 <Layout page="page">
-  <Meta slot="meta" />
+  <Meta slot="meta" post={post} />
   <Page slot="main" post={post} />
+  <PageNav slot="page-nav" posts={posts} prev={prev} , next={next} />
 </Layout>

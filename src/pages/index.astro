@@ -2,9 +2,24 @@
 import Layout from "../layouts/Layout.astro";
 import Meta from "../components/Meta.astro";
 import PageList from "../components/page/PageList.astro";
+import PageNavigator from "../components/page/PageNavigator.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts");
+
+const page = {
+  data: posts.slice(0, 11),
+  start: 0,
+  end: 9,
+  size: 10,
+  total: posts.length,
+  currentPage: 1,
+  lastPage: Math.ceil(posts.length / 10),
+};
 ---
 
 <Layout page="home">
   <Meta slot="meta" />
-  <PageList slot="main"/>
+  <PageList slot="main" page={page} />
+  <PageNavigator slot="page-nav" page={page} />
 </Layout>

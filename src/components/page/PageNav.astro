@@ -1,0 +1,52 @@
+---
+const { posts, prev, next } = Astro.props;
+console.log(prev, next);
+---
+
+<div class="page-nav-container">
+  {
+    prev !== null ? (
+      <a href={`/posts/${posts[prev].slug}`}>
+        <div class="nav-arrow">{"<"}</div>
+        <div class="nav-title">{posts[prev].data.title}</div>
+      </a>
+    ) : (
+      <div />
+    )
+  }
+  {
+    next !== null ? (
+      <a href={`/posts/${posts[next].slug}`}>
+        <div class="nav-title">{posts[next].data.title}</div>
+        <div class="nav-arrow">{">"}</div>
+      </a>
+    ) : (
+      <div />
+    )
+  }
+</div>
+
+<style>
+  .page-nav-container {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-arrow {
+    font-size: 1.2em;
+    padding: 5px;
+  }
+
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav-title {
+    padding-top: 1px;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+</style>

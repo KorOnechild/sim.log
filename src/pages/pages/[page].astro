@@ -1,0 +1,20 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Meta from "../../components/Meta.astro";
+import PageList from "../../components/page/PageList.astro";
+import PageNavigator from "../../components/page/PageNavigator.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths({ paginate }) {
+  const posts = await getCollection("posts");
+  return paginate(posts, { pageSize: 10 });
+}
+
+const { page } = Astro.props;
+---
+
+<Layout page="home">
+  <Meta slot="meta" />
+  <PageList slot="main" page={page} />
+  <PageNavigator slot="page-navigator" page={page} />
+</Layout>
