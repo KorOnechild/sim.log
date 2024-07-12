@@ -1,5 +1,10 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import defMeta from "../utils/defaultMeta.js";
+const { post } = Astro.props;
+
+const meta = post === undefined ? defMeta : post.data;
+console.log(post);
 ---
 
 <meta charset="utf-8" />
@@ -8,7 +13,9 @@ import { ViewTransitions } from "astro:transitions";
 <meta name="generator" content={Astro.generator} />
 
 <!-- Meta Tags -->
-<title>sim.log</title>
+<title>
+  {meta.title !== "sim.log" ? meta.title + " | sim.log" : meta.title}
+</title>
 
 <!-- Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,5 +24,9 @@ import { ViewTransitions } from "astro:transitions";
   href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
   rel="stylesheet"
 />
+
+<meta name="title" content={meta.title} />
+<meta name="description" content={meta.description} />
+<meta name="keyword" content={meta.keyword} />
 
 <ViewTransitions />
