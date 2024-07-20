@@ -3,9 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import Meta from "../components/Meta.astro";
 import PageList from "../components/page/PageList.astro";
 import PageNavigator from "../components/page/PageNavigator.astro";
-import { getCollection } from "astro:content";
+import { getPosts } from "../utils/utils.js";
 
-const posts = await getCollection("posts");
+const posts = await getPosts("posts");
 
 const page = {
   data: posts.slice(0, 11),

@@ -1,10 +1,9 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import defMeta from "../utils/defaultMeta.js";
+import { defMeta } from "../utils/utils.js";
 const { post } = Astro.props;
 
 const meta = post === undefined ? defMeta : post.data;
-console.log(post);
 ---
 
 <meta charset="utf-8" />

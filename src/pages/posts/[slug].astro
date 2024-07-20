@@ -5,9 +5,10 @@ import Page from "../../components/page/Page.astro";
 import PageNav from "../../components/page/PageNav.astro";
 
 import { getCollection } from "astro:content";
+import { getPosts } from "../../utils/utils";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts");
+  const posts = await getPosts("posts");
   return posts.map((post, i) => ({
     params: { slug: post.slug },
     props: {
