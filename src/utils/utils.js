@@ -19,7 +19,8 @@ export const getPosts = async (post) =>
   (await getCollection(post)).sort(orderByDesc);
 
 // 날짜 포맷 계산 함수
-export const subDate = (date) =>
-  `${date.getFullYear()}-${
-    (date.getMonth() >= 10 ? (date.getMonth() + 1) : `0` + (date.getMonth() + 1))
+export const subDate = (date) => {
+  return `${date.getFullYear()}-${
+    date.getMonth() >= 10 ? date.getMonth() + 1 : `0` + (date.getMonth() + 1)
   }-${date.getDate() >= 10 ? date.getDate() : `0` + date.getDate()}`;
+};

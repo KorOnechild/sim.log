@@ -2,7 +2,7 @@
 slug: "Serialization"
 title: "직렬화, Serialization"
 description: "Java에서 객체를 스트림으로 쓰고 읽을 수 있는 직렬화(Serialization)에 대해 알아보자"
-date: 2024-07-22T13:19:20
+date: 2024-07-22T13:19:20+09:00
 thumbnail: "Java"
 category: "Java"
 keyword: "Serialization, serialization, 직렬화, 자바, Java"

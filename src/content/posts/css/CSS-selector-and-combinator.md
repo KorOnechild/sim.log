@@ -2,7 +2,7 @@
 slug: "CSS-selector-and-combinator"
 title: "CSS selector와 combinator"
 description: "CSS selector의 종류와 combinator에 대해 알아보자"
-date: 2024-07-06T13:19:20
+date: 2024-07-06T13:19:20+09:00
 thumbnail: "CSS"
 category: "CSS"
 keyword : "css, css 선택자, css selector"
