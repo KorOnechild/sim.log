@@ -1,13 +1,15 @@
 ---
 import { subDate } from "../../utils/utils.js";
+import { base } from "../../utils/utils.js";
 import banner from "../../assets/banner.jpg";
 import Image from "astro/components/Image.astro";
 
 // 프로젝트 내부 전체 이미지 불러오기
 const { page } = Astro.props;
+console.log(base);
 ---
 
-<div class="banner" />
+<div class="banner"></div>
 <!-- <Image class="banner" src={banner} alt="banner" /> -->
 <div class="post-container">
   {
@@ -15,7 +17,7 @@ const { page } = Astro.props;
       <article class="post-item">
         {/* <ImageComponent post={post} imagePath={images[post.data.cover]} /> */}
         <div class="info-container">
-          <a href={`/posts/${post.data.slug}`}>
+          <a href={`/${base}/posts/${post.data.slug}`}>
             <h2 class="title" id="title">
               {post.data.title}
             </h2>
@@ -38,7 +40,7 @@ const { page } = Astro.props;
   .banner {
     width: 100%;
     height: 350px;
-    background-image: url('../../assets/banner.webp');
+    background-image: url("../../assets/banner.webp");
     background-size: cover;
     background-position-y: 51%;
     margin-bottom: 30px;

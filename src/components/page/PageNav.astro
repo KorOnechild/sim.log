@@ -1,12 +1,12 @@
 ---
+import { base } from "../../utils/utils.js";
 const { posts, prev, next } = Astro.props;
-console.log(prev, next);
 ---
 
 <div class="page-nav-container">
   {
     prev !== null ? (
-      <a href={`/posts/${posts[prev].slug}`}>
+      <a href={`/${base}/posts/${posts[prev].slug}`}>
         <div class="nav-arrow">{"<"}</div>
         <div class="nav-title">{posts[prev].data.title}</div>
       </a>
@@ -16,7 +16,7 @@ console.log(prev, next);
   }
   {
     next !== null ? (
-      <a href={`/posts/${posts[next].slug}`}>
+      <a href={`/${base}/posts/${posts[next].slug}`}>
         <div class="nav-title">{posts[next].data.title}</div>
         <div class="nav-arrow">{">"}</div>
       </a>

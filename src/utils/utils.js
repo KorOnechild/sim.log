@@ -1,4 +1,7 @@
 import { getCollection } from "astro:content";
+import defineConfig from "../../astro.config.mjs";
+
+export const base = defineConfig.base;
 
 export const defMeta = {
   title: "sim.log",
