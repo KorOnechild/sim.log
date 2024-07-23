@@ -23,13 +23,9 @@ a {
   width: 100%;
 }
 
-.home.container {
-  margin-top: 90px;
-}
-
 .nav-container,
 .page-nav-container,
-.container,
+.home.container > .post-container,
 .markdown,
 .footer {
   width: 45%;
