@@ -1,11 +1,13 @@
 ---
+import {subDate} from "../../utils/utils.js";
+
 const { post } = Astro.props;
 const { Content } = await post.render();
-
 const subjectColor = {
   CSS: "#264de4",
   HTML: "#E34F26",
   MarkDown: "black",
+  Java: "#D6343F",
 };
 ---
 
@@ -17,7 +19,7 @@ const subjectColor = {
     {post.data.title}
   </div>
   <div class="sb-date">
-    {post.data.date}
+    {subDate(post.data.date)}
   </div>
   <!-- TODO: a태그로 카테고리 목록으로 이동 -->
   <div class="sb-cate">
