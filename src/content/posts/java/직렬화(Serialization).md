@@ -46,7 +46,7 @@ Spring 강의 질문 답변 중 String 타입에 json 형태로 값을 저장해
 
 > An ObjectOutputStream writes primitive data types and graphs of Java objects to an OutputStream
 
-ObjectOutputStream은 [**primitive data types**](#primitive-data-types "기본 자료형")와 [**graphs of Java objects**](#graphs-of-java-objects "참조가 포함된 객체가 직렬화되면 자동으로 직렬화되는 객체 세트")를 OutputStream에 쓴다고 합니다.
+ObjectOutputStream은 [**primitive data types**](#primitive-data-types "기본 자료형")와 [**graphs of Java objects**](#graphs-of-java-objects "참조가 포함된 객체가 직렬화되면 자동으로 직렬화되는 객체 세트")를 OutputStream에 쓴다고 합니다.  
 Oracle 공식문서에 나와있는 ObjectOutputStream의 역할입니다. 즉, 직렬화(스트림에 객체를 출력)에 사용한다.
 
 #### Class 선언부
