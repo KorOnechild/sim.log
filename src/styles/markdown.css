@@ -29,29 +29,29 @@
     margin-bottom: 25px;
     font-weight: bold !important;
     border-bottom: 3px solid #e0e0e0;
-    font-size: 31px;
+    font-size: 1.72em;
   }
 
   h2 {
-    font-size: 25px;
+    font-size: 1.38em;
   }
 
   h3 {
-    font-size: 23px;
+    font-size: 1.27em;
   }
 
   h4 {
-    font-size: 21px;
+    font-size: 1.17em;
   }
 
   /* h5는 예시 코드 설명란으로 사용 */
   h5 {
-    font-size: 19px;
+    font-size: 1.05em;
     margin-top: 15px;
   }
 
   h6 {
-    font-size: 17px;
+    font-size: 0.94em;
   }
 
   .astro-code {

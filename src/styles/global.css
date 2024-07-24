@@ -19,11 +19,11 @@ a {
   text-decoration: none;
 }
 
-.page.container {
+/* .page.container {
   width: 100%;
-}
+} */
 
-.nav-container,
+/* .nav-container,
 .page-nav-container,
 .home.container > .post-container,
 .markdown,
@@ -31,7 +31,7 @@ a {
   width: 45%;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 
 /* nav바, 로고, 게시글 제목 색상 애니메이션 */
 header a:hover,
@@ -98,5 +98,47 @@ header a:hover,
 
   100% {
     background-position: 100% 50%;
+  }
+}
+
+/* 280~674 */
+@media (min-width: 280px) {
+  html {
+    font-size: 14px;
+  }
+
+  .nav-container,
+  .page-nav-container,
+  .home.container > .post-container,
+  .markdown,
+  .footer {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 674px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 870px) {
+  .nav-container,
+  .page-nav-container,
+  .home.container > .post-container,
+  .markdown,
+  .footer {
+    width: 864px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* 1024~ */
+@media (min-width: 1024px) {
+  html {
+    font-size: 18px;
   }
 }

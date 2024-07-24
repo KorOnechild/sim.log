@@ -6,7 +6,7 @@ const { posts, prev, next } = Astro.props;
 <div class="page-nav-container">
   {
     prev !== null ? (
-      <a href={`/${base}/posts/${posts[prev].slug}`}>
+      <a class="left-arrow" href={`/${base}/posts/${posts[prev].slug}`}>
         <div class="nav-arrow">{"<"}</div>
         <div class="nav-title">{posts[prev].data.title}</div>
       </a>
@@ -16,7 +16,7 @@ const { posts, prev, next } = Astro.props;
   }
   {
     next !== null ? (
-      <a href={`/${base}/posts/${posts[next].slug}`}>
+      <a class="right-arrow" href={`/${base}/posts/${posts[next].slug}`}>
         <div class="nav-title">{posts[next].data.title}</div>
         <div class="nav-arrow">{">"}</div>
       </a>
@@ -31,6 +31,14 @@ const { posts, prev, next } = Astro.props;
     margin-top: 80px;
     display: flex;
     justify-content: space-between;
+  }
+
+  .left-arrow {
+    text-align: left;
+  }
+
+  .right-arrow {
+    text-align: right;
   }
 
   .nav-arrow {
