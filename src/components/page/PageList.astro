@@ -13,21 +13,20 @@ const { page } = Astro.props;
     page.data.map((post) => (
       <article class="post-item">
         {/* <ImageComponent post={post} imagePath={images[post.data.cover]} /> */}
+
         <div class="info-container">
           <a href={`/${base}/posts/${post.data.slug}`}>
             <h2 class="title" id="title">
               {post.data.title}
             </h2>
-          </a>
-          <div class="date-cate">
-            <a>
+            <div class="date-cate">
               <div id="title" class="category">
                 {post.data.category}
               </div>
-            </a>
-            <div class="date">{subDate(post.data.date)}</div>
-          </div>
-          <p class="desc">{post.data.description}</p>
+              <div class="date">{subDate(post.data.date)}</div>
+            </div>
+            <p class="desc">{post.data.description}</p>
+          </a>
         </div>
       </article>
     ))
@@ -43,6 +42,10 @@ const { page } = Astro.props;
     background-position-y: 51%;
     margin-bottom: 2.94vh;
     position: relative;
+  }
+
+  a {
+    height: inherit;
   }
 
   .banner::after {
