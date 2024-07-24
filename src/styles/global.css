@@ -19,15 +19,14 @@ a {
   width: 100%;
 } */
 
-/* .nav-container,
+.nav-container,
 .page-nav-container,
 .home.container > .post-container,
 .markdown,
 .footer {
-  width: 45%;
   margin-left: auto;
   margin-right: auto;
-} */
+}
 
 /* nav바, 로고, 게시글 제목 색상 애니메이션 */
 header a:hover,
@@ -109,8 +108,6 @@ header a:hover,
   .markdown,
   .footer {
     width: 95%;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -120,15 +117,13 @@ header a:hover,
   }
 }
 
-@media (min-width: 870px) {
+@media (min-width: 768px) {
   .nav-container,
   .page-nav-container,
   .home.container > .post-container,
   .markdown,
   .footer {
-    width: 864px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 768px;
   }
 }
 

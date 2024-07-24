@@ -36,10 +36,12 @@ const subjectColor = {
 <style>
   .subject-banner {
     width: 100%;
-    height: 39.2vh;
+    max-height: 400px;
+    height: 39.2vmax;
     margin-bottom: 40px;
-    padding-top: 6.86vh;
     position: relative;
+    display: flex;
+    justify-content: center;
   }
 
   .subject-banner::after {
@@ -49,7 +51,6 @@ const subjectColor = {
     background: linear-gradient(to top, black, 1px, transparent);
   }
   .subject-container {
-    padding-top: 11.7vh;
     display: flex;
     flex-direction: column;
     align-items: center;
