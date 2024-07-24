@@ -26,10 +26,13 @@ getPageNum(lastPage);
     href={`${path}/${currentPage - 1}`}
     class={isFisrtPage ? "arrow unavailable" : "arrow"}>{"<"}</a
   >
-  <div class="nav-num">
+  <div class="nav-num" id="rainbow">
     {
       pageNum.map((i) => (
-        <a href={`${path}/${i}`} class={i === currentPage ? "current-page" : ""}>
+        <a
+          href={`${path}/${i}`}
+          class={i === currentPage ? "current-page" : ""}
+        >
           {i}
         </a>
       ))

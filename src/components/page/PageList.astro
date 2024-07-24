@@ -11,24 +11,21 @@ const { page } = Astro.props;
 <div class="post-container">
   {
     page.data.map((post) => (
-      <article class="post-item">
-        {/* <ImageComponent post={post} imagePath={images[post.data.cover]} /> */}
-
-        <div class="info-container">
-          <a href={`/${base}/posts/${post.data.slug}`}>
+      <a href={`/${base}/posts/${post.data.slug}`}>
+        <article class="post-item">
+          {/* <ImageComponent post={post} imagePath={images[post.data.cover]} /> */}
+          <div class="info-container">
             <h2 class="title" id="title">
               {post.data.title}
             </h2>
             <div class="date-cate">
-              <div id="title" class="category">
-                {post.data.category}
-              </div>
+              <div class="category">{post.data.category}</div>
               <div class="date">{subDate(post.data.date)}</div>
             </div>
             <p class="desc">{post.data.description}</p>
-          </a>
-        </div>
-      </article>
+          </div>
+        </article>
+      </a>
     ))
   }
 </div>
@@ -63,6 +60,29 @@ const { page } = Astro.props;
     padding-bottom: 10px;
   }
 
+  .post-item:hover {
+    #title {
+      background: repeating-linear-gradient(
+        -70deg,
+        #ff0000,
+        #ff6f61,
+        #ff7f50,
+        #f05d18,
+        #d64d8c,
+        #a64ac9,
+        #ff0000 75%
+      );
+
+      background-size: 450%;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation-name: rainbowColor;
+      animation-duration: 3.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+
   .info-container {
     /* margin-left: 3%; */
     flex: 1;
@@ -77,13 +97,6 @@ const { page } = Astro.props;
       font-size: 1.38em;
       width: fit-content;
       max-height: 1.3em;
-    }
-
-    #title {
-      animation-duration: 2s;
-      animation-name: rainbowColor;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
     }
 
     .date-cate {

@@ -29,27 +29,10 @@ a {
 }
 
 /* nav바, 로고, 게시글 제목 색상 애니메이션 */
-header a:hover,
-.info-container > a > #title:hover,
-.date-cate > a:hover,
+#rainbow:hover,
 .page-nav-container > a:hover,
-.nav-num > a:hover,
-.sb-cate:hover,
+.nav-num:hover,
 .arrow:hover {
-  /* background: linear-gradient(
-    -70deg,
-    #ffc52a,
-    #ff7a2a,
-    #ff2a2a,
-    #e82aff,
-    #202082,
-    #2a89ff,
-    #43ff2a,
-    #ffc52a,
-    #ff7a2a,
-    #ff2a2a
-  ); */
-
   /* 다크모드 색상 */
   /* background: repeating-linear-gradient(
     -70deg,
