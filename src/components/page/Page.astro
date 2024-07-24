@@ -1,5 +1,5 @@
 ---
-import {subDate} from "../../utils/utils.js";
+import { subDate } from "../../utils/utils.js";
 
 const { post } = Astro.props;
 const { Content } = await post.render();
@@ -8,23 +8,25 @@ const subjectColor = {
   HTML: "#E34F26",
   MarkDown: "black",
   Java: "#D6343F",
-  생각: "darkgrey"
+  생각: "darkgrey",
 };
 ---
 
 <div
-  class="subject-container"
+  class="subject-banner"
   style=`background-color:${subjectColor[post.data.category]}`
 >
-  <div class="subject">
-    {post.data.title}
-  </div>
-  <div class="sb-date">
-    {subDate(post.data.date)}
-  </div>
-  <!-- TODO: a태그로 카테고리 목록으로 이동 -->
-  <div class="sb-cate">
-    {post.data.category}
+  <div class="subject-container">
+    <div class="sb-title">
+      {post.data.title}
+    </div>
+    <div class="sb-date">
+      {subDate(post.data.date)}
+    </div>
+    <!-- TODO: a태그로 카테고리 목록으로 이동 -->
+    <div class="sb-cate">
+      {post.data.category}
+    </div>
   </div>
 </div>
 <div class="markdown">
@@ -32,11 +34,22 @@ const subjectColor = {
 </div>
 
 <style>
-  .subject-container {
+  .subject-banner {
     width: 100%;
     height: 400px;
     margin-bottom: 40px;
     padding-top: 70px;
+    position: relative;
+  }
+
+  .subject-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, black, 1px, transparent);
+  }
+  .subject-container {
+    padding-top: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,10 +58,11 @@ const subjectColor = {
     font-weight: bold;
     color: white;
     text-shadow: black 1px 1px 7px;
-    box-shadow: 0 1px 10px black;
+    position: relative;
+    z-index: 1;
   }
 
-  .subject {
+  .sb-title {
     font-size: 2.5em;
   }
 

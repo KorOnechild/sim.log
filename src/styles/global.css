@@ -39,10 +39,11 @@ header a:hover,
 .date-cate > a:hover,
 .page-nav-container > a:hover,
 .nav-num > a:hover,
-.sb-cate:hover {
-  background: linear-gradient(
+.sb-cate:hover,
+.arrow:hover {
+  /* background: linear-gradient(
     -70deg,
-    /* #43ff2a, */ #ffc52a,
+    #ffc52a,
     #ff7a2a,
     #ff2a2a,
     #e82aff,
@@ -52,12 +53,36 @@ header a:hover,
     #ffc52a,
     #ff7a2a,
     #ff2a2a
+  ); */
+
+  /* 다크모드 색상 */
+  /* background: repeating-linear-gradient(
+    -70deg,
+    #1a2980,
+    #1976d2,
+    #2e3192,
+    #4a00e0,
+    #6a0d91,
+    #8e2de2,
+    #1a2980 75%
+  ); */
+  /* 일반 모드 색상 */
+  background: repeating-linear-gradient(
+    -70deg,
+    #ff0000,
+    #ff6f61,
+    #ff7f50,
+    #f05d18,
+    #d64d8c,
+    #a64ac9,
+    #ff0000 75%
   );
-  background-size: 500%;
+
+  background-size: 450%;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation-name: rainbowColor;
-  animation-duration: 4s;
+  animation-duration: 3.5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
