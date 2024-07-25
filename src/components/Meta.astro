@@ -7,18 +7,14 @@ const url = Astro.url;
 const meta = post === undefined ? defMeta : post.data;
 const icon = `${url.origin}/favicon.ico`;
 const ogImage = `${url.origin}/ogimage.png`;
+const banner = `${url.origin}/banner.webp`;
 ---
 
 <meta charset="utf-8" />
 <link rel="icon" href={icon} />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
-<link
-  rel="preload"
-  href="/src/assets/banner.webp"
-  as="image"
-  type="image/webp"
-/>
+<link rel="preload" href={banner} as="image" type="image/webp" />
 
 <title>
   {meta.title !== defMeta.title ? meta.title + " | sim.log" : meta.title}
