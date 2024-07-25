@@ -21,7 +21,7 @@ const ogImage = `${url.origin}/${base}/ogimage.png`;
 />
 
 <title>
-  {meta.title !== "sim.log" ? meta.title + " | sim.log" : meta.title}
+  {meta.title !== defMeta.title ? meta.title + " | sim.log" : meta.title}
 </title>
 
 <!-- Meta Tags -->
@@ -31,12 +31,12 @@ const ogImage = `${url.origin}/${base}/ogimage.png`;
 
 <!-- open graph -->
 <meta property="og:title" content={meta.title} />
-<meta property="og:type" content="blog" />
+<meta property="og:type" content={defMeta.type} />
 <meta property="og:url" content={url.href} />
 <meta property="og:image" content={ogImage} />
-<meta property="og:image:alt" content="sim.log" />
+<meta property="og:image:alt" content={defMeta.title} />
 <meta property="og:description" content={meta.description} />
-<meta property="og:site_name" content="sim.log" />
+<meta property="og:site_name" content={defMeta.title} />
 <meta property="og:locate" content="kr_KR" />
 
 <!-- twitter open graph  -->
