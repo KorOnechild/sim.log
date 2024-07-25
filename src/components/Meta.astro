@@ -29,5 +29,13 @@ const meta = post === undefined ? defMeta : post.data;
 <meta name="keyword" content={meta.keyword} />
 <script async src="https://www.googletagmanager.com/gtag/js?id=TAG_ID"></script>
 <!-- Global tag(gtag.js) -->
-<script type="text/javascript" src="../utils/gtag.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ2BHTQ7SH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PQ2BHTQ7SH');
+</script>
 <ViewTransitions />
