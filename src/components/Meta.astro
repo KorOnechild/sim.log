@@ -1,25 +1,49 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import { defMeta } from "../utils/utils.js";
-const { post } = Astro.props;
+import { defMeta, base } from "../utils/utils.js";
 
+const { post } = Astro.props;
+const url = Astro.url;
 const meta = post === undefined ? defMeta : post.data;
+const icon = `/${base}/icon_32.png`;
+const ogImage = `${url.origin}/${base}/ogimage.png`;
 ---
 
 <meta charset="utf-8" />
-<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+<link rel="icon" sizes="32x32" type="image/png" href={icon} />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
-<link rel="preload" href="../assets/banner.webp" as="image">
+<link
+  rel="preload"
+  href="/src/assets/banner.webp"
+  as="image"
+  type="image/webp"
+/>
 
-<!-- Meta Tags -->
 <title>
   {meta.title !== "sim.log" ? meta.title + " | sim.log" : meta.title}
 </title>
 
+<!-- Meta Tags -->
 <meta name="title" content={meta.title} />
 <meta name="description" content={meta.description} />
 <meta name="keyword" content={meta.keyword} />
+
+<!-- open graph -->
+<meta property="og:title" content={meta.title} />
+<meta property="og:type" content="blog" />
+<meta property="og:url" content={url.href} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:description" content={meta.description} />
+<meta property="og:site_name" content="sim.log" />
+<meta property="og:locate" content="kr_KR" />
+
+<!-- twitter open graph  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content={url.href} />
+<meta name="twitter:title" content={meta.title} />
+<meta name="twitter:description" content={meta.description} />
+<meta name="twitter:image" content={ogImage} />
 
 <!-- Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
