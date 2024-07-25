@@ -27,15 +27,22 @@ const meta = post === undefined ? defMeta : post.data;
 <meta name="title" content={meta.title} />
 <meta name="description" content={meta.description} />
 <meta name="keyword" content={meta.keyword} />
-<script async src="https://www.googletagmanager.com/gtag/js?id=TAG_ID"></script>
-<!-- Global tag(gtag.js) -->
+
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ2BHTQ7SH"></script>
+<meta
+  name="google-site-verification"
+  content="WgRVhPpSbzAJSfbknVxQ3rjD4qu5XDOXOxDupPemTl4"
+/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ2BHTQ7SH"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
 
-  gtag('config', 'G-PQ2BHTQ7SH');
+  gtag("config", "G-PQ2BHTQ7SH");
 </script>
+
 <ViewTransitions />
