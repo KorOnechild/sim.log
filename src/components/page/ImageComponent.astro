@@ -5,7 +5,7 @@ const { post, imagePath} = Astro.props;
 ---
 
 <!-- TODO: - <Picture />을 사용한 이미지 최적화 --><!--       - 반응형 이미지 작성 -->
-<a href={`/${base}/posts/${post.data.slug}`}>
+<a href={`/posts/${post.data.slug}`}>
   <div class="opacity-box"></div>
   {
     imagePath ? (

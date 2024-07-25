@@ -5,8 +5,8 @@ import { defMeta, base } from "../utils/utils.js";
 const { post } = Astro.props;
 const url = Astro.url;
 const meta = post === undefined ? defMeta : post.data;
-const icon = `${url.origin}/${base}/favicon.ico`;
-const ogImage = `${url.origin}/${base}/ogimage.png`;
+const icon = `${url.origin}/favicon.ico`;
+const ogImage = `${url.origin}/ogimage.png`;
 ---
 
 <meta charset="utf-8" />
