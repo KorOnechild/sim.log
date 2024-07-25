@@ -10,11 +10,16 @@ const meta = post === undefined ? defMeta : post.data;
 <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
+<link rel="preload" href="../assets/banner.webp" as="image">
 
 <!-- Meta Tags -->
 <title>
   {meta.title !== "sim.log" ? meta.title + " | sim.log" : meta.title}
 </title>
+
+<meta name="title" content={meta.title} />
+<meta name="description" content={meta.description} />
+<meta name="keyword" content={meta.keyword} />
 
 <!-- Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,10 +28,6 @@ const meta = post === undefined ? defMeta : post.data;
   href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
   rel="stylesheet"
 />
-
-<meta name="title" content={meta.title} />
-<meta name="description" content={meta.description} />
-<meta name="keyword" content={meta.keyword} />
 
 <!-- Google tag (gtag.js) -->
 <meta
