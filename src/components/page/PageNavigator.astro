@@ -22,23 +22,25 @@ getPageNum(lastPage);
 <div class="page-navigator-container">
   <a
     href={`${path}/${currentPage - 1}`}
-    class={isFisrtPage ? "arrow unavailable" : "arrow"}>{"<"}</a
+    class={isFisrtPage ? "arrow unavailable" : "arrow"}
+    ><span id="rainbow">{"<"}</span></a
   >
-  <div class="nav-num" id="rainbow">
+  <div class="nav-num">
     {
       pageNum.map((i) => (
         <a
           href={`${path}/${i}`}
           class={i === currentPage ? "current-page" : ""}
         >
-          {i}
+          <span id="rainbow">{i}</span>
         </a>
       ))
     }
   </div>
   <a
     href={`${path}/${currentPage + 1}`}
-    class={isLastPage ? "arrow unavailable" : "arrow"}>{">"}</a
+    class={isLastPage ? "arrow unavailable" : "arrow"}
+    ><span id="rainbow">{">"}</span></a
   >
 </div>
 
@@ -55,7 +57,6 @@ getPageNum(lastPage);
   a {
     padding-left: 5px;
     padding-right: 5px;
-    color: black;
   }
 
   .nav-num {
@@ -68,7 +69,6 @@ getPageNum(lastPage);
   }
 
   .arrow.unavailable {
-    color: #e0e0e0;
     pointer-events: none;
   }
 </style>

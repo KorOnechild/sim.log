@@ -4,20 +4,11 @@ body {
   /* Font */
   font-family: "Gowun Dodum", sans-serif;
   font-style: normal;
-
-  ::selection {
-    background-color: #f6e199;
-  }
 }
 
 a {
-  color: black;
-  text-decoration: none;
+  text-decoration: none !important;
 }
-
-/* .page.container {
-  width: 100%;
-} */
 
 .nav-container,
 .page-nav-container,
@@ -26,43 +17,6 @@ a {
 .footer {
   margin-left: auto;
   margin-right: auto;
-}
-
-/* nav바, 로고, 게시글 제목 색상 애니메이션 */
-#rainbow:hover,
-.page-nav-container > a:hover,
-.nav-num:hover,
-.arrow:hover {
-  /* 다크모드 색상 */
-  /* background: repeating-linear-gradient(
-    -70deg,
-    #1a2980,
-    #1976d2,
-    #2e3192,
-    #4a00e0,
-    #6a0d91,
-    #8e2de2,
-    #1a2980 75%
-  ); */
-  /* 일반 모드 색상 */
-  background: repeating-linear-gradient(
-    -70deg,
-    #ff0000,
-    #ff6f61,
-    #ff7f50,
-    #f05d18,
-    #d64d8c,
-    #a64ac9,
-    #ff0000 75%
-  );
-
-  background-size: 450%;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation-name: rainbowColor;
-  animation-duration: 3.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 }
 
 @keyframes rainbowColor {
@@ -84,7 +38,6 @@ a {
   html {
     font-size: 15px;
   }
-
   .nav-container,
   .page-nav-container,
   .home.container > .post-container,

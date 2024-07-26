@@ -6,8 +6,12 @@ const { posts, prev, next } = Astro.props;
   {
     prev !== null ? (
       <a class="left-arrow" href={`/posts/${posts[prev].slug}`}>
-        <div class="nav-arrow">{"<"}</div>
-        <div class="nav-title">{posts[prev].data.title}</div>
+        <div id="rainbow" class="nav-arrow">
+          {"<"}
+        </div>
+        <div id="rainbow" class="nav-title">
+          {posts[prev].data.title}
+        </div>
       </a>
     ) : (
       <div />
@@ -16,8 +20,12 @@ const { posts, prev, next } = Astro.props;
   {
     next !== null ? (
       <a class="right-arrow" href={`/posts/${posts[next].slug}`}>
-        <div class="nav-title">{posts[next].data.title}</div>
-        <div class="nav-arrow">{">"}</div>
+        <div id="rainbow" class="nav-title">
+          {posts[next].data.title}
+        </div>
+        <div id="rainbow" class="nav-arrow">
+          {">"}
+        </div>
       </a>
     ) : (
       <div />

@@ -14,7 +14,7 @@ const { page } = Astro.props;
         <article class="post-item">
           {/* <ImageComponent post={post} imagePath={images[post.data.cover]} /> */}
           <div class="info-container">
-            <h2 class="title" id="title">
+            <h2 class="title" id="rainbow">
               {post.data.title}
             </h2>
             <div class="date-cate">
@@ -40,10 +40,6 @@ const { page } = Astro.props;
     position: relative;
   }
 
-  a {
-    height: inherit;
-  }
-
   .banner::after {
     content: "";
     position: absolute;
@@ -55,11 +51,11 @@ const { page } = Astro.props;
     margin-top: 10px;
     display: flex;
     max-height: 160px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid;
     padding-bottom: 10px;
   }
 
-  .post-item:hover {
+  /* .post-item:hover {
     #title {
       background: repeating-linear-gradient(
         -70deg,
@@ -80,9 +76,9 @@ const { page } = Astro.props;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
     }
-  }
+  } */
 
-  .info-container {
+  a {
     /* margin-left: 3%; */
     flex: 1;
 
@@ -109,7 +105,6 @@ const { page } = Astro.props;
     }
 
     .date {
-      color: grey;
       font-size: 0.8em;
       margin-left: 5px;
     }

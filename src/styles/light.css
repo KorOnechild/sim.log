@@ -1,0 +1,100 @@
+.light {
+  color: black;
+  background-color: #fafafa;
+
+  ::selection {
+    background-color: #f6e199;
+  }
+  a {
+    color: black;
+  }
+
+  /* nav바, 로고, 게시글 제목 색상 애니메이션 */
+  a:hover {
+    /* 일반 모드 색상 */
+    #rainbow {
+      background: repeating-linear-gradient(
+        -70deg,
+        #ff0000,
+        #ff6f61,
+        #ff7f50,
+        #f05d18,
+        #d64d8c,
+        #a64ac9,
+        #ff0000 75%
+      );
+      background-size: 450%;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation-name: rainbowColor;
+      animation-duration: 3.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+
+  /* Header.astro */
+  .header {
+    background-color: #fafafa;
+  }
+
+  /* PageList.astro */
+  .post-container {
+    .post-item {
+      border-color: #e0e0e0;
+
+      .date {
+        color: #1c1c1c;
+      }
+    }
+  }
+
+  /* PageNavigator */
+  .page-navigator-container {
+    .arrow.unavailable {
+      color: #e0e0e0;
+    }
+  }
+
+  /* Footer.astro */
+  .footer {
+    color: black;
+  }
+
+  /* markdown */
+  .markdown {
+    color: #1a1a1a;
+
+    h1 {
+      border-color: #e0e0e0;
+    }
+
+    .astro-code {
+      ::selection {
+        background-color: transparent;
+        color: #f6e199;
+      }
+    }
+
+    p,
+    ol,
+    ul,
+    blockquote {
+      code {
+        border-color: #f6e199;
+      }
+    }
+
+    blockquote {
+      color: #141616;
+      background-color: #d1ecf1;
+      border-color: #bee5eb;
+    }
+
+    hr {
+      margin-top: 25px;
+      background-color: #e0e0e0;
+      border-color: transparent;
+    }
+  }
+}
