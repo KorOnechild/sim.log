@@ -1,20 +1,20 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import { defMeta, base } from "../utils/utils.js";
+import { defMeta } from "../utils/utils.js";
 
 const { post } = Astro.props;
 const url = Astro.url;
 const meta = post === undefined ? defMeta : post.data;
-const icon = `${url.origin}/favicon.ico`;
-const ogImage = `${url.origin}/ogimage.png`;
-const banner = `${url.origin}/banner.webp`;
+const iconPath = `${url.origin}/favicon.ico`;
+const ogImagePath = `${url.origin}/ogimage.png`;
+const bannerPath = `${url.origin}/banner.webp`;
 ---
 
 <meta charset="utf-8" />
-<link rel="icon" href={icon} />
+<link rel="icon" href={iconPath} type="image/vnd.microsoft.icon" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
-<link rel="preload" href={banner} as="image" type="image/webp" />
+<link rel="preload" href={bannerPath} as="image" type="image/webp" />
 
 <title>
   {meta.title !== defMeta.title ? meta.title + " | sim.log" : meta.title}
@@ -29,7 +29,7 @@ const banner = `${url.origin}/banner.webp`;
 <meta property="og:title" content={meta.title} />
 <meta property="og:type" content={defMeta.type} />
 <meta property="og:url" content={url.href} />
-<meta property="og:image" content={ogImage} />
+<meta property="og:image" content={ogImagePath} />
 <meta property="og:image:alt" content={defMeta.title} />
 <meta property="og:description" content={meta.description} />
 <meta property="og:site_name" content={defMeta.title} />
@@ -40,7 +40,7 @@ const banner = `${url.origin}/banner.webp`;
 <meta name="twitter:url" content={url.href} />
 <meta name="twitter:title" content={meta.title} />
 <meta name="twitter:description" content={meta.description} />
-<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image" content={ogImagePath} />
 
 <!-- Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
