@@ -1,6 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import { defMeta } from "../utils/utils.js";
+import { defMeta } from "../scripts/config.js";
 
 const { post } = Astro.props;
 const url = Astro.url;
@@ -58,14 +58,5 @@ const bannerPath = `${url.origin}/banner.webp`;
 />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ2BHTQ7SH"
 ></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-
-  gtag("config", "G-PQ2BHTQ7SH");
-</script>
-
+<script src="../scripts/google.js"></script>
 <ViewTransitions />

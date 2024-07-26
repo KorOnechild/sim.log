@@ -4,7 +4,7 @@ import Meta from "../../components/Meta.astro";
 import Page from "../../components/page/Page.astro";
 import PageNav from "../../components/page/PageNav.astro";
 
-import { getPosts } from "../../utils/utils";
+import { getPosts } from "../../scripts/utils";
 
 export async function getStaticPaths() {
   const posts = await getPosts("posts");
@@ -27,3 +27,4 @@ const { post, posts, prev, next } = Astro.props;
   <Page slot="main" post={post} />
   <PageNav slot="page-nav" posts={posts} prev={prev} , next={next} />
 </Layout>
+
