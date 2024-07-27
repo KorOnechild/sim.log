@@ -38,6 +38,9 @@
   /* Header.astro */
   .header {
     background-color: #1b1b1b;
+    #theme-button {
+      background-image: url("/lightmode.svg");
+    }
   }
 
   /* PageList.astro */

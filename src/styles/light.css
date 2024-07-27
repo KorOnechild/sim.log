@@ -37,6 +37,10 @@
   /* Header.astro */
   .header {
     background-color: #fafafa;
+
+    #theme-button {
+      background-image: url("/darkmode.svg");
+    }
   }
 
   /* PageList.astro */

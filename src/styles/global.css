@@ -33,6 +33,7 @@ a {
   }
 }
 
+/* media query */
 /* 280~674 */
 @media (min-width: 280px) {
   html {

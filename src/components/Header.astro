@@ -6,9 +6,9 @@
   <div class="nav-container">
     <a href="/" class="logo"><span id="rainbow">sim.log</span></a>
     <nav class="nav">
-      <a href="/404"><span id="rainbow">about</span></a>
-      <a href="/404"><span id="rainbow">category</span></a>
-      <button id="theme-button"></button>
+      <div id="theme-button"></div>
+      <!-- <a href="/404"><span id="rainbow">about</span></a> -->
+      <!-- <a href="/404"><span id="rainbow">category</span></a> -->
     </nav>
   </div>
 </header>
@@ -44,5 +44,15 @@
   .logo {
     font-size: 1.5em;
     font-weight: 600;
+  }
+
+  #theme-button {
+    display: inline-block;
+    margin-left: 5px;
+    width: 26px;
+    height: 26px;
+    background-color: transparent;
+    border-color: transparent;
+    background-size: cover;
   }
 </style>
