@@ -21,9 +21,6 @@ const bannerPath = `${url.origin}/banner.webp`;
   {meta.title !== defMeta.title ? meta.title + " | sim.log" : meta.title}
 </title>
 
-<!-- WebSite -->
-<script type="application/ld+json" src="../scripts/website.js"></script>
-
 <!-- Meta Tags -->
 <meta name="title" content={meta.title} />
 <meta name="description" content={meta.description} />
@@ -62,4 +59,14 @@ const bannerPath = `${url.origin}/banner.webp`;
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ2BHTQ7SH"
 ></script>
 <script src="../scripts/google.js"></script>
+<!-- WebSite -->
+<script type="application/ld+json" src="../scripts/website.json"></script>
+<script>
+  if(localStorage.getItem("theme")==null) {
+    localStorage.setItem("theme", "light");
+  }
+
+  const body = document.getElementsByTagName("body")[0];
+  body.setAttribute("class", localStorage.getItem("theme"));
+</script>
 <ViewTransitions />

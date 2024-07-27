@@ -1,8 +1,4 @@
 document.addEventListener("astro:page-load", () => {
-  if (localStorage.getItem("theme") === null) {
-    localStorage.setItem("theme", "light");
-  }
-
   const bodyClassName = document.getElementsByTagName("body")[0].classList;
   const themeButtons = document.getElementById("theme-button");
   const theme = localStorage.getItem("theme");

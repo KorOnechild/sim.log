@@ -1,6 +1,6 @@
 .dark {
   color: #fafafa;
-  background-color: #121212;
+  background-color: #1b1b1b;
 
   ::selection {
     background-color: #c9a646;
@@ -8,6 +8,7 @@
 
   a {
     color: #fafafa;
+    text-decoration: none;
   }
 
   /* nav바, 로고, 게시글 제목 색상 애니메이션 */
@@ -18,9 +19,9 @@
         -70deg,
         #1a2980,
         #1976d2,
-        #2e3192,
+        #2024ad,
         #4a00e0,
-        #6a0d91,
+        #9723c9,
         #8e2de2,
         #1a2980 75%
       );
@@ -36,7 +37,7 @@
 
   /* Header.astro */
   .header {
-    background-color: #121212;
+    background-color: #1b1b1b;
   }
 
   /* PageList.astro */
@@ -71,6 +72,7 @@
     }
 
     .astro-code {
+      background-color: #121212 !important;
       ::selection {
         background-color: transparent;
         color: #c9a646;
