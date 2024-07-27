@@ -44,12 +44,12 @@
       #theme-button {
         background-image: url("/lightmode.svg");
       }
-      @media (hover: hover) {
+      @media (hover: hover) and (pointer: fine) {
         #theme-button:hover {
           background-color: #3d3d3d;
         }
       }
-      @media (hover: none) {
+      @media (hover: none) and (pointer: coarse) {
         #theme-button:active {
           background-color: #3d3d3d;
         }
