@@ -6,10 +6,10 @@
   <div class="nav-container">
     <a href="/" class="logo"><span id="rainbow">sim.log</span></a>
     <nav class="nav">
-      <div id="theme-button"></div>
       <!-- <a href="/404"><span id="rainbow">about</span></a> -->
       <!-- <a href="/404"><span id="rainbow">category</span></a> -->
     </nav>
+    <div id="theme-button"></div>
   </div>
 </header>
 
@@ -23,7 +23,6 @@
     left: 0;
     right: 0;
     z-index: 10;
-    opacity: 0.95;
     padding-top: 1.45vmin;
     padding-bottom: 0.7vmin;
     margin-bottom: 10px;
@@ -33,7 +32,7 @@
   .nav-container {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
   }
 
   .nav {
@@ -49,10 +48,16 @@
   #theme-button {
     display: inline-block;
     margin-left: 5px;
-    width: 26px;
-    height: 26px;
-    background-color: transparent;
+    width: 24px;
+    height: 24px;
     border-color: transparent;
-    background-size: cover;
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  #theme-button:hover {
+    background-color: #e0e0e0;
   }
 </style>

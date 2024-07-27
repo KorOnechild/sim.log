@@ -1,100 +1,107 @@
 .dark {
-  color: #fafafa;
-  background-color: #1b1b1b;
-
-  ::selection {
-    background-color: #c9a646;
-  }
-
-  a {
+  color-scheme: dark;
+  
+  body {
     color: #fafafa;
-    text-decoration: none;
-  }
-
-  /* nav바, 로고, 게시글 제목 색상 애니메이션 */
-  a:hover {
-    /* 다크모드 색상 */
-    #rainbow {
-      background: repeating-linear-gradient(
-        -70deg,
-        #1a2980,
-        #1976d2,
-        #2024ad,
-        #4a00e0,
-        #9723c9,
-        #8e2de2,
-        #1a2980 75%
-      );
-      background-size: 450%;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation-name: rainbowColor;
-      animation-duration: 3.5s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-    }
-  }
-
-  /* Header.astro */
-  .header {
     background-color: #1b1b1b;
-    #theme-button {
-      background-image: url("/lightmode.svg");
-    }
-  }
 
-  /* PageList.astro */
-  .post-container {
-    .post-item {
-      border-color: #414141;
-
-      .date {
-        color: lightgray;
-      }
-    }
-  }
-
-  /* PageNavigator */
-  .page-navigator-container {
-    .arrow.unavailable {
-      color: #414141;
-    }
-  }
-
-  /* Footer.astro */
-  .footer {
-    color: #fafafa;
-  }
-
-  /* markdown */
-  .markdown {
-    color: #fafafa;
-
-    h1 {
-      border-color: #414141;
+    ::selection {
+      background-color: #c9a646;
     }
 
-    .astro-code {
-      background-color: #121212 !important;
-      ::selection {
-        background-color: transparent;
-        color: #c9a646;
+    a {
+      color: #fafafa;
+      text-decoration: none;
+    }
+
+    /* nav바, 로고, 게시글 제목 색상 애니메이션 */
+    a:hover {
+      /* 다크모드 색상 */
+      #rainbow {
+        background: repeating-linear-gradient(
+          -70deg,
+          #1a2980,
+          #1976d2,
+          #2024ad,
+          #4a00e0,
+          #9723c9,
+          #8e2de2,
+          #1a2980 75%
+        );
+        background-size: 450%;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation-name: rainbowColor;
+        animation-duration: 3.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
       }
     }
 
-    p,
-    ol,
-    ul,
-    blockquote {
-      code {
-        border-color: #c9a646;
+    /* Header.astro */
+    .header {
+      background: rgb(27, 27, 27, 0.95);
+      #theme-button {
+        background-image: url("/lightmode.svg");
+      }
+      #theme-button:hover {
+        background-color: #3d3d3d;
       }
     }
 
-    blockquote {
-      color: #a3ecff; /* 텍스트 색상 - 밝은 시안 */
-      background-color: #1a2e35; /* 배경 색상 - 어두운 블루/그린 */
-      border-color: #296d73;
+    /* PageList.astro */
+    .post-container {
+      .post-item {
+        border-color: #414141;
+
+        .date {
+          color: lightgray;
+        }
+      }
+    }
+
+    /* PageNavigator */
+    .page-navigator-container {
+      .arrow.unavailable {
+        color: #414141;
+      }
+    }
+
+    /* Footer.astro */
+    .footer {
+      color: #fafafa;
+    }
+
+    /* markdown */
+    .markdown {
+      color: #fafafa;
+
+      h1 {
+        border-color: #414141;
+      }
+
+      .astro-code {
+        background-color: #121212 !important;
+        ::selection {
+          background-color: transparent;
+          color: #c9a646;
+        }
+      }
+
+      p,
+      ol,
+      ul,
+      blockquote {
+        code {
+          border-color: #c9a646;
+        }
+      }
+
+      blockquote {
+        color: #a3ecff; /* 텍스트 색상 - 밝은 시안 */
+        background-color: #1a2e35; /* 배경 색상 - 어두운 블루/그린 */
+        border-color: #296d73;
+      }
     }
   }
 }

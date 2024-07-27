@@ -20,7 +20,6 @@ const bannerPath = `${url.origin}/banner.webp`;
 <title>
   {meta.title !== defMeta.title ? meta.title + " | sim.log" : meta.title}
 </title>
-
 <!-- Meta Tags -->
 <meta name="title" content={meta.title} />
 <meta name="description" content={meta.description} />
@@ -62,11 +61,11 @@ const bannerPath = `${url.origin}/banner.webp`;
 <!-- WebSite -->
 <script type="application/ld+json" src="../scripts/website.json"></script>
 <script>
-  if(localStorage.getItem("theme")==null) {
+  const theme = localStorage.getItem("theme");
+  const html = document.getElementsByTagName("html")[0];
+  if (theme === null) {
     localStorage.setItem("theme", "light");
   }
-
-  const body = document.getElementsByTagName("body")[0];
-  body.setAttribute("class", localStorage.getItem("theme"));
+  html.setAttribute("class", localStorage.getItem("theme"));
 </script>
 <ViewTransitions />
