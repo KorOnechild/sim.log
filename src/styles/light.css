@@ -1,6 +1,6 @@
 .light {
   color-scheme: light;
-  
+
   body {
     color: #1b1b1b;
     background-color: #fafafa;
@@ -43,6 +43,16 @@
       background: rgb(250, 250, 250, 0.95);
       #theme-button {
         background-image: url("/darkmode.svg");
+      }
+      @media (hover: hover) {
+        #theme-button:hover {
+          background-color: #e0e0e0;
+        }
+      }
+      @media (hover: none) {
+        #theme-button:active {
+          background-color: #e0e0e0;
+        }
       }
     }
 
