@@ -58,7 +58,7 @@
 
     /* PageList.astro */
     .banner {
-      background-image: url("/darkbanner.webp");
+      background-image: url("https://simlog.life/darkbanner.webp");
       background-position: 0% 60%;
     }
     .post-container {
