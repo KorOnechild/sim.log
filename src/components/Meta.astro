@@ -8,6 +8,8 @@ const meta = post === undefined ? defMeta : post.data;
 const iconPath = `${url.origin}/favicon.ico`;
 const ogImagePath = `${url.origin}/ogimage.png`;
 const bannerPath = `${url.origin}/banner.webp`;
+const lightMode = `${url.origin}/lightmode.svg`;
+const darkMode = `${url.origin}/darkmode.svg`;
 ---
 
 <meta charset="utf-8" />
@@ -16,6 +18,8 @@ const bannerPath = `${url.origin}/banner.webp`;
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
 <link rel="preload" href={bannerPath} as="image" type="image/webp" />
+<link rel="preload" href={lightMode} as="image" type="image/svg+xml" />
+<link rel="preload" href={darkMode} as="image" type="image/svg+xml" />
 
 <title>
   {meta.title !== defMeta.title ? meta.title + " | sim.log" : meta.title}
@@ -51,6 +55,7 @@ const bannerPath = `${url.origin}/banner.webp`;
 />
 
 <!-- Google tag (gtag.js) -->
+
 <meta
   name="google-site-verification"
   content="WgRVhPpSbzAJSfbknVxQ3rjD4qu5XDOXOxDupPemTl4"
