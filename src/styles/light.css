@@ -45,7 +45,13 @@
         background-image: url("/darkmode.svg");
       }
 
-      #theme-button:hover {
+      @media (hover: hover) and (pointer: fine) {
+        #theme-button:hover {
+          background-color: #e0e0e0;
+        }
+      }
+
+      #theme-button:active {
         background-color: #e0e0e0;
       }
     }
