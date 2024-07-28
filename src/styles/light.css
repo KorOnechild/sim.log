@@ -57,6 +57,10 @@
     }
 
     /* PageList.astro */
+    .banner {
+      background-image: url("/lightbanner.webp");
+    }
+
     .post-container {
       .post-item {
         border-color: #e0e0e0;

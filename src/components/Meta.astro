@@ -7,7 +7,8 @@ const url = Astro.url;
 const meta = post === undefined ? defMeta : post.data;
 const iconPath = `${url.origin}/favicon.ico`;
 const ogImagePath = `${url.origin}/ogimage.png`;
-const bannerPath = `${url.origin}/banner.webp`;
+const lightbannerPath = `${url.origin}/lightbanner.webp`;
+const dakrbannerPath = `${url.origin}/darkbanner.webp`;
 const lightMode = `${url.origin}/lightmode.svg`;
 const darkMode = `${url.origin}/darkmode.svg`;
 ---
@@ -17,7 +18,8 @@ const darkMode = `${url.origin}/darkmode.svg`;
 <link rel="shortcut icon" href={iconPath} type="image/vnd.microsoft.icon" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
-<link rel="preload" href={bannerPath} as="image" type="image/webp" />
+<link rel="preload" href={lightbannerPath} as="image" type="image/webp" />
+<link rel="preload" href={dakrbannerPath} as="image" type="image/webp" />
 <link rel="preload" href={lightMode} as="image" type="image/svg+xml" />
 <link rel="preload" href={darkMode} as="image" type="image/svg+xml" />
 

@@ -1,6 +1,5 @@
 document.addEventListener("astro:page-load", () => {
   const htmlClassName = document.getElementsByTagName("html")[0].classList;
-  // const bodyClassName = document.getElementsByTagName("body")[0].classList;
   const themeButtons = document.getElementById("theme-button");
   const theme = localStorage.getItem("theme");
   htmlClassName.value = theme;
