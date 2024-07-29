@@ -1,12 +1,11 @@
 ---
+import Banner from "./Banner.astro";
+
 import { subDate } from "../../scripts/utils.js";
 
 // 프로젝트 내부 전체 이미지 불러오기
 const { page } = Astro.props;
 ---
-
-<div class="banner"></div>
-<!-- <Image class="banner" src={banner} alt="banner" /> -->
 <div class="post-container">
   {
     page.data.map((post) => (
@@ -29,23 +28,6 @@ const { page } = Astro.props;
   }
 </div>
 <style>
-  .banner {
-    width: 100%;
-    max-height: 400px;
-    height: 39.2vmax;
-    background-size: cover;
-    background-position-y: 51%;
-    margin-bottom: 2.94vh;
-    position: relative;
-  }
-
-  .banner::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, black, 1px, transparent);
-  }
-
   .post-item {
     margin-top: 10px;
     display: flex;

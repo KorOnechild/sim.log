@@ -1,0 +1,15 @@
+---
+
+import Banner from "./Banner.astro";
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<!-- <div
+  class="subject-banner"
+  style=`background-color:${subjectColor[post.data.category]}`
+> -->
+<div class="markdown">
+  <Content />
+</div>

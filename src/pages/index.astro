@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Meta from "../components/Meta.astro";
 import PageList from "../components/page/PageList.astro";
 import PageNavigator from "../components/page/PageNavigator.astro";
+import Banner from "../components/page/Banner.astro";
 import { getPosts } from "../scripts/utils.js";
 
 const posts = await getPosts("posts");
@@ -20,6 +21,7 @@ const page = {
 
 <Layout page="home">
   <Meta slot="meta" />
+  <Banner slot="banner" />
   <PageList slot="main" page={page} />
   <PageNavigator slot="page-nav" page={page} />
 </Layout>

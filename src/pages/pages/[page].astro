@@ -4,6 +4,7 @@ import Meta from "../../components/Meta.astro";
 import PageList from "../../components/page/PageList.astro";
 import PageNavigator from "../../components/page/PageNavigator.astro";
 import { getPosts } from "../../scripts/utils";
+import Banner from "../../components/page/Banner.astro";
 
 export async function getStaticPaths({ paginate }) {
   const posts = await getPosts("posts");
@@ -15,6 +16,7 @@ const { page } = Astro.props;
 
 <Layout page="home">
   <Meta slot="meta" />
+  <Banner slot="banner" />
   <PageList slot="main" page={page} />
   <PageNavigator slot="page-navigator" page={page} />
 </Layout>

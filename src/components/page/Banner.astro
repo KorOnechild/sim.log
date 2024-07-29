@@ -1,8 +1,11 @@
 ---
 import { subDate } from "../../scripts/utils.js";
-
 const { post } = Astro.props;
-const { Content } = await post.render();
+
+// post가 props로 내려왔는가
+const isPost = post !== undefined ? true : false;
+const pathName = Astro.url.pathname.split("/")[1];
+const path = pathName === "" ? "root" : pathName;
 const subjectColor = {
   CSS: "#264de4",
   HTML: "#E34F26",
@@ -10,13 +13,13 @@ const subjectColor = {
   Java: "#D6343F",
   생각: "darkgrey",
 };
+
+// const bannerStyle = `background-color:${subjectColor[post.data.category]}`;
 ---
 
-<div
-  class="subject-banner"
-  style=`background-color:${subjectColor[post.data.category]}`
->
-  <div class="subject-container">
+<div class=`${path} banner`>
+  {
+    !isPost ? null : <div class="subject-container" slot="subject">
     <div class="sb-title">
       {post.data.title}
     </div>
@@ -28,28 +31,32 @@ const subjectColor = {
       {post.data.category}
     </div>
   </div>
-</div>
-<div class="markdown">
-  <Content />
+  }
 </div>
 
 <style>
-  .subject-banner {
+  .banner {
     width: 100%;
     max-height: 400px;
     height: 39.2vmax;
-    margin-bottom: 40px;
+    background-size: cover;
     position: relative;
-    display: flex;
-    justify-content: center;
+    margin-bottom: 20px;
   }
 
-  .subject-banner::after {
+  .banner::after {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(to top, black, 1px, transparent);
   }
+
+  .posts.banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
   .subject-container {
     display: flex;
     flex-direction: column;
@@ -61,6 +68,7 @@ const subjectColor = {
     color: white;
     /* text-shadow: black 1px 1px 7px; */
     position: relative;
+    top: 7%;
     z-index: 1;
   }
 

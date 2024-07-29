@@ -6,6 +6,7 @@ import "../styles/dark.css";
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Toc from "../components/aside/Toc.astro";
 
 const { page } = Astro.props;
 ---
@@ -17,12 +18,13 @@ const { page } = Astro.props;
   </head>
   <body>
     <Header />
+    <slot name="banner"/>
     <main class=`${page} container`>
       <slot name="main" />
-      <slot name="page-navigator" />
-      <slot name="page-nav" />
-      <slot name="404" />
     </main>
+    <slot name="page-navigator" />
+    <slot name="page-nav" />
+    <slot name="404" />
     <Footer />
   </body>
 </html>
