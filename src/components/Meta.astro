@@ -3,15 +3,14 @@ import { ViewTransitions } from "astro:transitions";
 import { defMeta } from "../scripts/config.js";
 
 const { post } = Astro.props;
-const url = Astro.url.href;
-console.log(Astro.url);
+const url = Astro.url;
 const meta = post === undefined ? defMeta : post.data;
-const iconPath = `${url}/favicon.ico`;
-const ogImagePath = `${url}/ogimage.png`;
-const lightbannerPath = `${url}/lightbanner.webp`;
-const dakrbannerPath = `${url}/darkbanner.webp`;
-const lightMode = `${url}/lightmode.svg`;
-const darkMode = `${url}/darkmode.svg`;
+const iconPath = `${url.origin}/favicon.ico`;
+const ogImagePath = `${url.origin}/ogimage.png`;
+const lightbannerPath = `${url.origin}/lightbanner.webp`;
+const dakrbannerPath = `${url.origin}/darkbanner.webp`;
+const lightMode = `${url.origin}/lightmode.svg`;
+const darkMode = `${url.origin}/darkmode.svg`;
 ---
 
 <meta charset="utf-8" />
@@ -33,13 +32,17 @@ const darkMode = `${url}/darkmode.svg`;
 <meta name="keyword" content={meta.keyword} />
 
 <!-- canonical -->
-<!-- <link rel="canonical" href={url} />
-<link rel="alternate" media="only screen and (max-width: 640px" href={url} /> -->
+<link rel="canonical" href="https://simlog.life" />
+<link
+  rel="alternate"
+  media="only screen and (max-width: 640px"
+  href="https://simlog.life"
+/>
 
 <!-- open graph -->
 <meta property="og:title" content={meta.title} />
 <meta property="og:type" content={defMeta.type} />
-<meta property="og:url" content={url} />
+<meta property="og:url" content={url.href} />
 <meta property="og:image" content={ogImagePath} />
 <meta property="og:image:alt" content={defMeta.title} />
 <meta property="og:description" content={meta.description} />
@@ -48,7 +51,7 @@ const darkMode = `${url}/darkmode.svg`;
 
 <!-- twitter open graph  -->
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:url" content={url} />
+<meta name="twitter:url" content={url.href} />
 <meta name="twitter:title" content={meta.title} />
 <meta name="twitter:description" content={meta.description} />
 <meta name="twitter:image" content={ogImagePath} />
