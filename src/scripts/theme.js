@@ -13,7 +13,6 @@ document.addEventListener("astro:page-load", () => {
       localStorage.setItem("theme", "light");
       htmlClassName.value = "light";
     }
-    console.log("hi");
   };
   themeButtons.onclick = changeTheme;
 });
