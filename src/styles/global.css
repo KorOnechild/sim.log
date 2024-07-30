@@ -56,13 +56,14 @@ a {
   .nav-container,
   .page-nav-container,
   .post-container,
-  .main .footer {
+  .main,
+  .markdown,
+  .footer {
     width: 95%;
   }
 
-  .page.container {
-    display: flex;
-    flex-direction: row;
+  .toc.container {
+    display: none;
   }
 }
 
@@ -95,5 +96,15 @@ a {
 @media (min-width: 1024px) {
   html {
     font-size: 18px;
+  }
+}
+
+@media (min-width: 1350px) {
+  .page.container {
+    display: flex;
+    flex-direction: row;
+  }
+  .toc.container {
+    display: unset;
   }
 }

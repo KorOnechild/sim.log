@@ -83,6 +83,11 @@
       color: #fafafa;
     }
 
+    /* Toc.astro */
+    ul > li.selected > a {
+      color: #79b8ff;
+    }
+
     /* markdown */
     .markdown {
       color: #fafafa;
