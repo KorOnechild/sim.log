@@ -42,14 +42,14 @@ const getTree = (
     arr[curIdx + 1] !== undefined ? arr[curIdx + 1].charAt(1) === " " : null;
 
   if (isPrevH1 && isPrevH1 !== null && !isCurH1) {
-    temp_html += `<ul class="toc ul">`;
+    temp_html = temp_html + `<ul class="toc ul">`;
     isOpenedNestedUl = true;
   }
 
   temp_html += `<li class="toc li"><a href="#${curId}">${curText}</a></li>`;
 
   if (isOpenedNestedUl && (isNextH1 || isNextH1 === null)) {
-    temp_html += "</ul>";
+    temp_html = temp_html + "</ul>";
     isOpenedNestedUl = false;
   }
   return getTree(
