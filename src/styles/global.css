@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background-color: #fafafa;
@@ -16,10 +20,14 @@ a {
   text-decoration: none;
 }
 
+.footer {
+  min-height: 300px;
+}
+
 .nav-container,
 .page-nav-container,
-.home.container > .post-container,
-.markdown,
+.post-container,
+/* .container, */
 .footer {
   margin-left: auto;
   margin-right: auto;
@@ -47,10 +55,14 @@ a {
   }
   .nav-container,
   .page-nav-container,
-  .home.container > .post-container,
-  .markdown,
-  .footer {
+  .post-container,
+  .main .footer {
     width: 95%;
+  }
+
+  .page.container {
+    display: flex;
+    flex-direction: row;
   }
 }
 
@@ -63,10 +75,19 @@ a {
 @media (min-width: 768px) {
   .nav-container,
   .page-nav-container,
-  .home.container > .post-container,
-  .markdown,
+  /* .post-container, */
+  main,
   .footer {
     width: 768px;
+  }
+
+  main {
+    position: relative;
+    left: calc((100% - 768px) / 2);
+  }
+
+  .aside.right {
+    left: calc(((100% - 768px) / 2));
   }
 }
 

@@ -1,0 +1,13 @@
+---
+const { pos } = Astro.props;
+---
+
+<aside class=`aside container ${pos}`>
+  <slot />
+</aside>
+
+<style>
+  .aside {
+    position: relative;
+  }
+</style>
