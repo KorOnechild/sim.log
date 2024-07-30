@@ -46,10 +46,6 @@ export const getTree = (
   var isNextH1 =
     arr[curIdx + 1] !== undefined ? arr[curIdx + 1].charAt(1) === " " : null;
 
-  // console.log(
-  //   `curId: ${curId}, prev: ${isPrevH1}, cur: ${isCurH1}, next: ${isNextH1}, nest: ${isOpenedNestedUl}, val: ${curValue}`
-  // );
-
   if (isPrevH1 && isPrevH1 !== null && !isCurH1) {
     temp_html += `<ul class="toc ul">`;
     isOpenedNestedUl = true;
