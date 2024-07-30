@@ -24,7 +24,7 @@ const getTree = (
   // 탈출 조건
   if (arr.length === curIdx) {
     temp_html = temp_html + "</ul>";
-    return temp_html.valueOf();
+    return temp_html;
   }
   const re = /[!?.]/g;
   const curValue = arr[curIdx];
