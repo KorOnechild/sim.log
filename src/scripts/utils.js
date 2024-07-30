@@ -57,7 +57,7 @@ export const getTree = (
     temp_html += "</ul>";
     isOpenedNestedUl = false;
   }
-
+  console.log(temp_html);
   return getTree(
     arr,
     curIdx + 1,
