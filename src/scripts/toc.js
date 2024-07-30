@@ -43,7 +43,6 @@ document.addEventListener("astro:page-load", () => {
             );
             const lis = document.querySelectorAll(".toc.li");
             const footer = document.querySelector("footer");
-            //   lis[0].classList.add("selected");
             for (let i = 0; i < tags.length; i++) {
               tags[i].dataset.index = i;
               lis[i].dataset.index = i;
@@ -74,7 +73,6 @@ document.addEventListener("astro:page-load", () => {
 
             if (document.getElementsByClassName("toc container").length !== 0) {
               const toc = document.getElementsByClassName("toc container");
-              //   toc[0].dataset.footer = false;
               const footerObserver = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                   if (!entry.isIntersecting) {

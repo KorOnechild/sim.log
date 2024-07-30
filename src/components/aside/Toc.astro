@@ -1,5 +1,4 @@
 ---
-import { getTree } from "../../scripts/utils.js";
 const { post } = Astro.props;
 
 // headline 요소 추출
@@ -11,6 +10,59 @@ const isHead = (e) => {
 const headLine = body.filter((e) => isHead(e) && e.startsWith("#"));
 let temp_html = "<ul>";
 let isOpenedNestedUl = false;
+
+// TOC 생성 함수
+const getTree = (
+  arr,
+  curIdx,
+  isPrevH1,
+  isCurH1,
+  isNextH1,
+  temp_html,
+  isOpenedNestedUl
+) => {
+  // 탈출 조건
+  if (arr.length === curIdx) {
+    temp_html = temp_html + "</ul>";
+    return temp_html.valueOf();
+  }
+  const re = /[!?.]/g;
+  const curValue = arr[curIdx];
+  const curText = curValue.replaceAll("#", "").trimStart();
+  const curId = curValue
+    .replaceAll("#", "")
+    .toLowerCase()
+    .trimStart()
+    .replaceAll(re, "")
+    .replaceAll(" ", "-");
+  isPrevH1 =
+    arr[curIdx - 1] !== undefined ? arr[curIdx - 1].charAt(1) === " " : null;
+  isCurH1 = curValue.charAt(1) === " ";
+  isNextH1 =
+    arr[curIdx + 1] !== undefined ? arr[curIdx + 1].charAt(1) === " " : null;
+
+  if (isPrevH1 && isPrevH1 !== null && !isCurH1) {
+    temp_html += `<ul class="toc ul">`;
+    isOpenedNestedUl = true;
+  }
+
+  temp_html += `<li class="toc li"><a href="#${curId}">${curText}</a></li>`;
+
+  if (isOpenedNestedUl && (isNextH1 || isNextH1 === null)) {
+    temp_html += "</ul>";
+    isOpenedNestedUl = false;
+  }
+  return getTree(
+    arr,
+    curIdx + 1,
+    isPrevH1,
+    isCurH1,
+    isNextH1,
+    temp_html,
+    isOpenedNestedUl
+  );
+};
+
 const temp_toc = getTree(
   headLine,
   0,
