@@ -42,8 +42,11 @@ document.addEventListener("astro:page-load", () => {
       }
 
       temp_html =
-        temp_html +
-        `<li class="toc li"><a href="#${curId}">${curText}</a></li>`;
+        curIdx === 0
+          ? temp_html +
+            `<li class="toc li selected"><a href="#${curId}">${curText}</a></li>`
+          : temp_html +
+            `<li class="toc li"><a href="#${curId}">${curText}</a></li>`;
 
       if (isOpenedNestedUl && (isNextH1 || isNextH1 === null)) {
         temp_html = temp_html + "</ul>";
