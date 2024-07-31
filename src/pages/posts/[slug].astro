@@ -33,7 +33,7 @@ const { post, posts, prev, next } = Astro.props;
   </Aside>
   <Post slot="main" post={post} />
   <Aside slot="aside-right" pos="right">
-    <Toc post={post}/>
+    <Toc post={post} />
   </Aside>
   <PageNav slot="page-nav" posts={posts} prev={prev} , next={next} />
 </Layout>
