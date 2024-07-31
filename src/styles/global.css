@@ -59,7 +59,7 @@ a {
   .main,
   .markdown,
   .footer {
-    width: 95%;
+    width: 100%;
   }
 
   .toc.container {
@@ -76,19 +76,21 @@ a {
 @media (min-width: 768px) {
   .nav-container,
   .page-nav-container,
-  /* .post-container, */
-  main,
-  .footer {
+  main {
+    width: 788px;
+  }
+
+  .markdown {
     width: 768px;
   }
 
   main {
     position: relative;
-    left: calc((100% - 768px) / 2);
+    left: calc((100% - 788px) / 2);
   }
 
   .aside.right {
-    left: calc(((100% - 768px) / 2));
+    left: calc(((100% - 788px) / 2));
   }
 }
 

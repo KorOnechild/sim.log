@@ -142,8 +142,7 @@ document.addEventListener("astro:page-load", () => {
               rootMargin: "0px 0px -299px 0px",
             };
 
-            if (document.getElementsByClassName("toc container").length !== 0) {
-              
+            if (tocContainer !== undefined) {
               const footerObserver = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                   if (!entry.isIntersecting) {
