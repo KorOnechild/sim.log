@@ -86,7 +86,7 @@
 
     /* Toc.astro */
     ul > li.selected > a {
-      color: red;
+      color: red !important;
     }
 
     /* markdown */
