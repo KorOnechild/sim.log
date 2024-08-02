@@ -74,9 +74,8 @@ a {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 788px) {
   main,
-  .nav-container,
   .page-nav-container {
     width: 768px;
   }
@@ -87,10 +86,25 @@ a {
   html {
     font-size: 18px;
   }
-}
-
-@media (min-width: 1350px) {
   .aside {
     display: unset;
+    font-size: 0.9em;
+  }
+  .nav-container {
+    max-width: 1254px;
+  }
+}
+
+@media (min-width: 1468px) {
+  main,
+  .page-nav-container {
+    width: 768px;
+  }
+  html {
+    font-size: 18px;
+  }
+  .aside {
+    display: unset;
+    font-size: 0.95em;
   }
 }

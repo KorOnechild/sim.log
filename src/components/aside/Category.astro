@@ -11,6 +11,7 @@ const categoryCnt = (category) => {
 <div class="category">
   <h3>Categorys</h3>
   <ul>
+    <a href="/"><li>전체 ({posts.length})</li></a>
     {
       categorys.map((category) => (
         <a href={`/category/${category}`}>
