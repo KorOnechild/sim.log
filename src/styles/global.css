@@ -50,7 +50,6 @@ a {
   }
   .nav-container,
   .page-nav-container,
-  .post-container,
   main,
   .footer {
     width: 95%;
@@ -75,23 +74,11 @@ a {
   }
 }
 
-/* @media (width: 768px) {
+@media (min-width: 768px) {
   main,
   .nav-container,
-  .page-nav-container,
-  .markdown {
-
-  }
-} */
-
-@media (min-width: 768px) {
-  main {
-    max-width: 788px;
-  }
-  .nav-container,
-  .page-nav-container,
-  .markdown {
-    max-width: 768px;
+  .page-nav-container {
+    width: 768px;
   }
 }
 
