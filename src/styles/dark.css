@@ -88,6 +88,11 @@
       color: #79b8ff!important;
     }
 
+    /* Category.astro */
+    .category > ul > a > li:hover {
+      background-color: #121212;
+    }
+
     /* markdown */
     .markdown {
       color: #fafafa;

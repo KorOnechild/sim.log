@@ -88,6 +88,11 @@
     ul > li.selected > a {
       color: red !important;
     }
+    
+    /* Category.astro */
+    .category > ul > a > li:hover {
+      background-color: #e0e0e0;
+    }
 
     /* markdown */
     .markdown {

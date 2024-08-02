@@ -4,6 +4,8 @@ import Meta from "../components/Meta.astro";
 import PageList from "../components/page/PageList.astro";
 import PageNavigator from "../components/page/PageNavigator.astro";
 import Banner from "../components/page/Banner.astro";
+import Aside from "../components/aside/Aside.astro";
+import Category from "../components/aside/Category.astro";
 import { getPosts } from "../scripts/utils.js";
 
 const posts = await getPosts("posts");
@@ -22,6 +24,12 @@ const page = {
 <Layout page="home">
   <Meta slot="meta" />
   <Banner slot="banner" />
+  <Aside slot="aside-left" pos="left">
+    <Category />
+  </Aside>
   <PageList slot="main" page={page} />
+  <Aside slot="aside-right" pos="right">
+    <!-- <Category /> -->
+  </Aside>
   <PageNavigator slot="page-nav" page={page} />
 </Layout>

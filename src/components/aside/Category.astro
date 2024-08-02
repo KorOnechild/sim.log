@@ -1,0 +1,57 @@
+---
+import { getPosts, getCategory } from "../../scripts/utils";
+const posts = await getPosts("posts");
+const categorys = getCategory(posts);
+const categoryCnt = (category) => {
+  const length = posts.filter((post) => post.data.category === category).length;
+  return length;
+};
+---
+
+<div class="category">
+  <h3>Categorys</h3>
+  <ul>
+    {
+      categorys.map((category) => (
+        <a href={`/category/${category}`}>
+          <li>
+            {category} ({categoryCnt(category)})
+          </li>
+        </a>
+      ))
+    }
+  </ul>
+</div>
+<style>
+  .category {
+    position: sticky;
+    top: 100px;
+    width: 200px;
+    left: 50%;
+    /* background-color: #121212; */
+    border-radius: 10px;
+    padding-right: 50px;
+    padding-top: 20px;
+
+    h3 {
+      margin: 0;
+      padding-bottom: 5px;
+      padding-left: 20px;
+    }
+  }
+
+  .category > ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  .category > ul > a > li {
+    padding: 5px 5px 5px 20px;
+    margin-top: 5px;
+    border-radius: 10px;
+  }
+
+  .category > ul > a > li::marker {
+    content: "";
+  }
+</style>

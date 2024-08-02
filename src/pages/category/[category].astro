@@ -1,0 +1,37 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Meta from "../../components/Meta.astro";
+import Banner from "../../components/page/Banner.astro";
+import Aside from "../../components/aside/Aside.astro";
+import Category from "../../components/aside/Category.astro";
+import PageList from "../../components/page/PageList.astro";
+import { getPosts, getCategory } from "../../scripts/utils";
+
+export async function getStaticPaths() {
+  const posts = await getPosts("posts");
+  const categorys = getCategory(posts);
+
+  return categorys.map((category) => ({
+    params: { category: category },
+    props: {
+      posts: {
+        data: [...posts.filter((post) => post.data.category === category)],
+      },
+    },
+  }));
+}
+
+const { posts } = Astro.props;
+---
+
+<Layout page="category">
+  <Meta slot="meta" />
+  <Banner slot="banner" />
+  <Aside slot="aside-left" pos="left">
+    <Category />
+  </Aside>
+  <PageList slot="main" page={posts} />
+  <Aside slot="aside-right" pos="right">
+    <!-- <Category /> -->
+  </Aside>
+</Layout>

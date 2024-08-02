@@ -15,3 +15,12 @@ export const subDate = (date) => {
     date.getMonth() >= 10 ? date.getMonth() + 1 : `0` + (date.getMonth() + 1)
   }-${date.getDate() >= 10 ? date.getDate() : `0` + date.getDate()}`;
 };
+
+// 카테고리 목록
+export const getCategory = (posts) => [
+  ...new Set(
+    posts.map((post) => {
+      return post.data.category;
+    })
+  ),
+];
