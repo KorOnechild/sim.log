@@ -75,15 +75,23 @@ a {
   }
 }
 
-@media (min-width: 768px) {
+/* @media (width: 768px) {
+  main,
   .nav-container,
   .page-nav-container,
-  main {
-    width: 788px;
-  }
-
   .markdown {
-    width: 768px;
+
+  }
+} */
+
+@media (min-width: 768px) {
+  main {
+    max-width: 788px;
+  }
+  .nav-container,
+  .page-nav-container,
+  .markdown {
+    max-width: 768px;
   }
 }
 
