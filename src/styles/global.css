@@ -78,7 +78,7 @@ a {
   main,
   .page-nav-container {
     max-width: 768px;
-    min-width: 650px;
+    min-width: 600px;
   }
 }
 

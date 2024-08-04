@@ -17,19 +17,18 @@ const headLine = body.filter((e) => isHead(e) && e.startsWith("#"));
     padding-top: 1px;
     position: sticky;
     top: 100px;
-    padding-left: 30px;
-
     display: flex;
     justify-content: center;
 
     li {
       margin-bottom: 4px;
+      font-size: 0.99em;
     }
 
     ul {
       padding: 0;
-      padding-right: 20px;
       ul {
+        padding: 0px;
         padding-left: 20px;
       }
     }
@@ -39,7 +38,7 @@ const headLine = body.filter((e) => isHead(e) && e.startsWith("#"));
     }
 
     .toc.ul > li > a {
-      font-size: 0.97em;
+      font-size: 0.9em;
     }
 
     ul > li > a {
