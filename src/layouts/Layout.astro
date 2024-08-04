@@ -23,11 +23,11 @@ const { page } = Astro.props;
       <slot name="aside-left" />
       <main>
         <slot name="main" />
+        <slot name="page-nav" />
       </main>
-      <slot name="aside-right"/>
+      <slot name="aside-right" />
     </div>
     <slot name="page-navigator" />
-    <slot name="page-nav" />
     <slot name="404" />
     <Footer />
   </body>
