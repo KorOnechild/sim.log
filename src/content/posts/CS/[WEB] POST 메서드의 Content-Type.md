@@ -2,7 +2,7 @@
 slug: "POST-메서드의-Content-Type"
 title: "[WEB]POST 메서드의 Content-Type"
 description: "POST 메서드의 Content-Type와 Percent-encoding에 대하여"
-date: 2024-08-08 4:19:00+09:00
+date: 2024-08-08 16:19:00+09:00
 thumbnail: "CS"
 category: "CS"
 keyword: "POST, POST Method, HTTP, Content-Type, application/x-www-form-urlencoded, Percent-encoding, URL encoding, multipart/form-data"
