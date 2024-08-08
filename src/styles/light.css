@@ -88,7 +88,7 @@
     ul > li.selected > a {
       color: red !important;
     }
-    
+
     /* Category.astro */
     .category > ul > a > li:hover {
       background-color: #e0e0e0;
@@ -114,7 +114,8 @@
       ul,
       blockquote {
         code {
-          border-color: #f6e199;
+          background-color: #e0e0e0;
+          color: red;
         }
       }
 

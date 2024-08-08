@@ -1,7 +1,7 @@
 .markdown {
   /* padding: 15px 10px 0px 10px; */
   min-height: 200px;
-  
+
   code,
   .astro-code {
     font-family: "Gowun Dodum", sans-serif;
@@ -69,7 +69,13 @@
   ul,
   blockquote {
     code {
-      border-bottom: 3px solid;
+      /* border: 3px solid; */
+      background-color: #e0e0e0;
+      color: red;
+      border-radius: 5px;
+      font-size: 0.9em;
+      padding: 0px 4px 0px 4px;
+      font-weight: bold;
     }
   }
 
@@ -104,6 +110,7 @@
 
   hr {
     margin-top: 25px;
+    margin-bottom: 25px;
     background-color: #e0e0e0;
     border-color: transparent;
   }

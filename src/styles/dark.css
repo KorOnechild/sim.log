@@ -85,7 +85,7 @@
 
     /* Toc.astro */
     ul > li.selected > a {
-      color: #79b8ff!important;
+      color: #79b8ff !important;
     }
 
     /* Category.astro */
@@ -114,7 +114,8 @@
       ul,
       blockquote {
         code {
-          border-color: #c9a646;
+          background-color: #414141;
+          color: #79b8ff;
         }
       }
 
@@ -122,6 +123,10 @@
         color: #a3ecff; /* 텍스트 색상 - 밝은 시안 */
         background-color: #1a2e35; /* 배경 색상 - 어두운 블루/그린 */
         border-color: #296d73;
+      }
+
+      hr {
+        background-color: #414141;
       }
     }
   }

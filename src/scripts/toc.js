@@ -1,5 +1,6 @@
 document.addEventListener("astro:page-load", () => {
   const getBody = (headLine) => {
+    console.log(headLine)
     let temp_html = "";
     let isOpenedNestedUl = false;
     // TOC 생성 함수
@@ -17,7 +18,7 @@ document.addEventListener("astro:page-load", () => {
         temp_html = "<ul>" + temp_html + "</ul>";
         return temp_html;
       }
-      const re = /[!?.]/g;
+      const re = /[!?./()]/g;
       const curValue = arr[curIdx];
       const curText = curValue.replaceAll("#", "").trimStart();
       const curId = curValue
