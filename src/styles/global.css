@@ -45,8 +45,11 @@ a {
 /* media query */
 /* 280~674 */
 @media (min-width: 0px) {
-  html {
+  /* html {
     font-size: 15px;
+  } */
+  .markdown {
+    font-size: 0.89em;
   }
   .nav-container,
   /* .page-nav-container, */
@@ -69,8 +72,11 @@ a {
 }
 
 @media (min-width: 674px) {
-  html {
+  /* html {
     font-size: 16px;
+  } */
+  .markdown {
+    font-size: 0.9em;
   }
 }
 
@@ -87,7 +93,9 @@ a {
   html {
     font-size: 18px;
   }
-
+  .markdown {
+    font-size: 0.93em;
+  }
   .aside {
     display: unset;
     font-size: 0.9em;
