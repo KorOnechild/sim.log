@@ -130,6 +130,27 @@
         background-color: #e0e0e0;
         border-color: transparent;
       }
+
+      table {
+        border: 1px solid #e0e0e0;
+      }
+
+      thead {
+        border-bottom: 2px solid #e0e0e0;
+      }
+    
+      tr {
+        display: table-row;
+        border: 1px solid #e0e0e0;
+      }
+    
+      th {
+        border: 1px solid #e0e0e0;
+      }
+    
+      td {
+        border: 1px solid #e0e0e0;
+      }
     }
   }
 }
