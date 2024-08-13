@@ -145,19 +145,6 @@ document.addEventListener("astro:page-load", () => {
             const footerOptions = {
               rootMargin: "0px 0px -299px 0px",
             };
-
-            if (tocContainer !== undefined) {
-              const footerObserver = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                  if (!entry.isIntersecting) {
-                    tocContainer.style.visibility = "";
-                  } else if (entry.isIntersecting) {
-                    tocContainer.style.visibility = "hidden";
-                  }
-                });
-              }, footerOptions);
-              footerObserver.observe(footer);
-            }
           });
         } else if (entry.isIntersecting) {
           tocContainer.style.visibility = "hidden";
