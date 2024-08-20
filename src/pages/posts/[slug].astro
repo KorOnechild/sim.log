@@ -7,6 +7,7 @@ import Banner from "../../components/page/Banner.astro";
 import Aside from "../../components/aside/Aside.astro";
 import Toc from "../../components/aside/Toc.astro";
 import Category from "../../components/aside/Category.astro";
+import Comment from "../../components/page/Comment.astro";
 
 import { getPosts } from "../../scripts/utils";
 
@@ -30,11 +31,12 @@ const { post, posts, prev, next } = Astro.props;
   <Meta slot="meta" post={post} />
   <Banner slot="banner" post={post} />
   <Aside slot="aside-left" pos="left">
-    <Category/>
+    <Category />
   </Aside>
   <Post slot="main" post={post} />
   <Aside slot="aside-right" pos="right">
     <Toc post={post} />
   </Aside>
   <PageNav slot="page-nav" posts={posts} prev={prev} , next={next} />
+  <Comment slot="comment" />
 </Layout>

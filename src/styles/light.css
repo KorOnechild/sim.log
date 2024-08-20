@@ -8,6 +8,7 @@
     ::selection {
       background-color: #f6e199;
     }
+
     a {
       color: #1b1b1b;
       text-decoration: none;
@@ -94,6 +95,14 @@
       background-color: #e0e0e0;
     }
 
+    .dark-comment {
+      display: none !important;
+    }
+
+    .light-comment {
+      display: block !important;
+    }
+
     /* markdown */
     .markdown {
       color: #1b1b1b;
@@ -138,16 +147,16 @@
       thead {
         border-bottom: 2px solid #e0e0e0;
       }
-    
+
       tr {
         display: table-row;
         border: 1px solid #e0e0e0;
       }
-    
+
       th {
         border: 1px solid #e0e0e0;
       }
-    
+
       td {
         border: 1px solid #e0e0e0;
       }

@@ -4,7 +4,7 @@ document.addEventListener("astro:page-load", () => {
   const theme = localStorage.getItem("theme");
   htmlClassName.value = theme;
 
-  const changeTheme = () => {
+  const changeTheme = async () => {
     const theme = localStorage.getItem("theme");
     if (theme === "light") {
       localStorage.setItem("theme", "dark");

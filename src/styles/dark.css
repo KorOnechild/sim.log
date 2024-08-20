@@ -1,6 +1,5 @@
 .dark {
   color-scheme: dark;
-
   body {
     color: #fafafa;
     background-color: #1b1b1b;
@@ -93,6 +92,14 @@
       background-color: #121212;
     }
 
+    .light-comment {
+      display: none !important;
+    }
+
+    .dark-comment {
+      display: block !important;
+    }
+
     /* markdown */
     .markdown {
       color: #fafafa;
@@ -136,16 +143,16 @@
       thead {
         border-bottom: 2px solid #414141;
       }
-    
+
       tr {
         display: table-row;
         border: 1px solid #414141;
       }
-    
+
       th {
         border: 1px solid #414141;
       }
-    
+
       td {
         border: 1px solid #414141;
       }
