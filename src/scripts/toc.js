@@ -1,6 +1,5 @@
 document.addEventListener("astro:page-load", () => {
   const getBody = (headLine) => {
-    console.log(headLine)
     let temp_html = "";
     let isOpenedNestedUl = false;
     // TOC 생성 함수
