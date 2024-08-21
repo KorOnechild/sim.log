@@ -92,6 +92,13 @@
       background-color: #121212;
     }
 
+    /* Comment.astro */
+    .comment-container {
+      h2 {
+        border-color: #414141;
+      }
+    }
+
     .light-comment {
       display: none !important;
     }

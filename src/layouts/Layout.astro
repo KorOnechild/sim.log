@@ -24,12 +24,12 @@ const { page } = Astro.props;
       <main>
         <slot name="main" />
         <slot name="page-nav" />
+        <slot name="comment" />
       </main>
       <slot name="aside-right" />
     </div>
     <slot name="page-navigator" />
     <slot name="404" />
-    <slot name="comment" />
     <Footer />
   </body>
 </html>

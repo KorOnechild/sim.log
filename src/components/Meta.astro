@@ -4,7 +4,6 @@ import { defMeta } from "../scripts/config.js";
 
 const { post } = Astro.props;
 const url = Astro.url;
-console.log(url);
 const meta = post === undefined ? defMeta : post.data;
 const iconPath = `${url.origin}/favicon.ico`;
 const ogImagePath = `${url.origin}/ogimage.png`;
