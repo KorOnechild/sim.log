@@ -4,6 +4,7 @@ import { defMeta } from "../scripts/config.js";
 
 const { post } = Astro.props;
 const url = Astro.url;
+console.log(url);
 const meta = post === undefined ? defMeta : post.data;
 const iconPath = `${url.origin}/favicon.ico`;
 const ogImagePath = `${url.origin}/ogimage.png`;
@@ -32,11 +33,11 @@ const darkMode = `${url.origin}/darkmode.svg`;
 <meta name="keyword" content={meta.keyword} />
 
 <!-- canonical -->
-<link rel="canonical" href="https://simlog.life" />
+<link rel="canonical" href={url.href} />
 <link
   rel="alternate"
   media="only screen and (max-width: 640px"
-  href="https://simlog.life"
+  href={url.href}
 />
 
 <!-- open graph -->
