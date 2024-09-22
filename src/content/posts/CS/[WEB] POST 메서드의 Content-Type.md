@@ -62,7 +62,7 @@ Percent-encoding이 사용되는 조건은 아래와 같습니다
 > Under normal circumstances, the only time when octets within a URI are percent-encoded is during the process of producing the URI from its component parts.  
 > [**RFC 3986의 section 2.4 When to Encode or Decode**](https://datatracker.ietf.org/doc/html/rfc3986#section-2.4)
 
-해석하자면, 일반적인 상황에서, URI 내의 옥텟이 Percent-encoding되는 유일한 경우는 URI를 그 구성 요소로부터 생성하는 과정 동안이라고 합니다. 이렇게 얘기하니까 너무 추상적이여서 이해하기 어려운 것 같네요. 저는 URI를 생성할 때 문자가(데이터 옥텟이 8-bit를 명확히 나타내므로 문자 1개로 봐도 되겠네요) URI의 허용된 문자 집합을 벗어나거나 구분자로 사용될 때 해당 문자 데이터를 URI에 표현하기 위해 Percent-encoding이 사용된다고 이해했습니다.
+해석하자면, 일반적인 상황에서, URI 내의 옥텟이 Percent-encoding되는 유일한 경우는 URI를 그 구성 요소로부터 생성하는 과정 동안이라고 합니다. 저는 URI를 생성할 때 문자가(데이터 옥텟이 8-bit를 명확히 나타내므로 문자 1개로 봐도 되겠네요) URI의 허용된 문자 집합을 벗어나거나 구분자로 사용될 때 해당 문자 데이터를 URI에 표현하기 위해 Percent-encoding이 사용된다고 이해했습니다.
 
 <hr>
 
