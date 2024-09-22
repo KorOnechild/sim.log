@@ -1,76 +1,78 @@
 document.addEventListener("astro:page-load", () => {
-  const getBody = (headLine) => {
+
+  const getToc = (headLine) => {
     let temp_html = "";
     let isOpenedNestedUl = false;
-    // TOC 생성 함수
-    const getTree = (
+    return createToc(headLine, 0, null, true, null, temp_html, isOpenedNestedUl);
+  };
+
+  // TOC 생성 함수
+  const createToc = (
+    arr,
+    curIdx,
+    isPrevH1,
+    isCurH1,
+    isNextH1,
+    temp_html,
+    isOpenedNestedUl
+  ) => {
+    // 탈출 조건
+    if (arr.length === curIdx) {
+      temp_html = "<ul>" + temp_html + "</ul>";
+      return temp_html;
+    }
+    const re = /[!?./()]/g;
+    const curValue = arr[curIdx];
+    const curText = curValue.replaceAll("#", "").trimStart();
+    const curId = curValue
+      .replaceAll("#", "")
+      .toLowerCase()
+      .trimStart()
+      .replaceAll(re, "")
+      .replaceAll(" ", "-");
+    isPrevH1 =
+      arr[curIdx - 1] !== undefined
+        ? arr[curIdx - 1].charAt(1) === " "
+        : null;
+    isCurH1 = curValue.charAt(1) === " ";
+    isNextH1 =
+      arr[curIdx + 1] !== undefined
+        ? arr[curIdx + 1].charAt(1) === " "
+        : null;
+
+    if (isPrevH1 && isPrevH1 !== null && !isCurH1) {
+      temp_html = temp_html + '<ul class="toc ul">';
+      isOpenedNestedUl = true;
+    }
+
+    temp_html =
+      curIdx === 0
+        ? temp_html +
+          `<li class="toc li selected"><a href="#${curId}">${curText}</a></li>`
+        : temp_html +
+          `<li class="toc li"><a href="#${curId}">${curText}</a></li>`;
+
+    if (isOpenedNestedUl && (isNextH1 || isNextH1 === null)) {
+      temp_html = temp_html + "</ul>";
+      isOpenedNestedUl = false;
+    }
+    return createToc(
       arr,
-      curIdx,
+      curIdx + 1,
       isPrevH1,
       isCurH1,
       isNextH1,
       temp_html,
       isOpenedNestedUl
-    ) => {
-      // 탈출 조건
-      if (arr.length === curIdx) {
-        temp_html = "<ul>" + temp_html + "</ul>";
-        return temp_html;
-      }
-      const re = /[!?./()]/g;
-      const curValue = arr[curIdx];
-      const curText = curValue.replaceAll("#", "").trimStart();
-      const curId = curValue
-        .replaceAll("#", "")
-        .toLowerCase()
-        .trimStart()
-        .replaceAll(re, "")
-        .replaceAll(" ", "-");
-      isPrevH1 =
-        arr[curIdx - 1] !== undefined
-          ? arr[curIdx - 1].charAt(1) === " "
-          : null;
-      isCurH1 = curValue.charAt(1) === " ";
-      isNextH1 =
-        arr[curIdx + 1] !== undefined
-          ? arr[curIdx + 1].charAt(1) === " "
-          : null;
-
-      if (isPrevH1 && isPrevH1 !== null && !isCurH1) {
-        temp_html = temp_html + '<ul class="toc ul">';
-        isOpenedNestedUl = true;
-      }
-
-      temp_html =
-        curIdx === 0
-          ? temp_html +
-            `<li class="toc li selected"><a href="#${curId}">${curText}</a></li>`
-          : temp_html +
-            `<li class="toc li"><a href="#${curId}">${curText}</a></li>`;
-
-      if (isOpenedNestedUl && (isNextH1 || isNextH1 === null)) {
-        temp_html = temp_html + "</ul>";
-        isOpenedNestedUl = false;
-      }
-      return getTree(
-        arr,
-        curIdx + 1,
-        isPrevH1,
-        isCurH1,
-        isNextH1,
-        temp_html,
-        isOpenedNestedUl
-      );
-    };
-
-    return getTree(headLine, 0, null, true, null, temp_html, isOpenedNestedUl);
+    );
   };
+
 
   const tocContainer = document.getElementsByClassName("toc container")[0];
 
   if (tocContainer !== undefined) {
     const body = tocContainer.dataset.body.split(",");
-    const temp_toc = getBody(body);
+    const temp_toc = getToc(body);
     tocContainer.innerHTML = temp_toc;
   }
 
