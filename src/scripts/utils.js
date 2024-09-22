@@ -17,10 +17,53 @@ export const subDate = (date) => {
 };
 
 // 카테고리 목록
-export const getCategory = (posts) => [
-  ...new Set(
-    posts.map((post) => {
-      return post.data.category;
-    })
-  ),
-];
+export const getCategory = (posts) => {
+  // let prevCategory;
+  // let currentCategory;
+  // let data = [];
+  // return [
+  // // ...new Set(
+  // //   posts.map((post) => {
+  // //     return post.data.category;
+  // //   })
+  // // ),
+  // posts.map((i, post) => {
+  //   prevCategory = post.data.category
+  //   currentCategory = post.data.category
+  //   console.log(post.data)
+  //   return post.data.category;
+  // })
+  // let result = posts.reduce((acc, post) => {
+  //   // 카테고리가 이미 존재하는지 확인
+  //   const existingCategory = acc.find(el => el.category === post.data.category);
+
+  //   if (existingCategory) {
+  //     // series가 있으면 중복되지 않게 추가
+  //     if (post.data.series && !existingCategory.series.includes(post.data.series)) {
+  //       existingCategory.series.push(post.data.series);
+  //     }
+  //   } else {
+  //     // 새 카테고리 생성
+  //     const newCategory = { category: post.data.category };
+  //     if (post.data.series) {
+  //       newCategory.series = [post.data.series];
+  //     }
+  //     acc.push(newCategory);
+  //   }
+
+  //   return acc;
+  // }, []);
+
+  const categoryMap = new Map();
+
+  posts.forEach((post) => {
+    if (categoryMap.has(post.data.category)) {
+      const seriesSet = categoryMap.get(post.data.category); 
+      seriesSet.add(post.data.series); 
+    } else {
+
+      categoryMap.set(post.data.category, new Set([post.data.series]));
+    }
+  });
+  return categoryMap;
+};

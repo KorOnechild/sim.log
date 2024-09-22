@@ -91,9 +91,10 @@
     }
 
     /* Category.astro */
-    .category > ul > a > li:hover {
-      background-color: #e0e0e0;
-    }
+    /* .category > ul > a > li:hover,
+    .category > ul > ul > a > li:hover {
+      color: #e0e0e0;
+    } */
 
     /* Comment.astro */
     .comment-container {

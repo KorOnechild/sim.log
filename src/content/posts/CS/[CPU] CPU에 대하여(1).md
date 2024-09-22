@@ -5,6 +5,7 @@ description: "CPU와 머신 사이클에 대하여"
 date: 2024-08-07 19:11:40+09:00
 thumbnail: "CS"
 category: "CS"
+series: "CPU"
 keyword: "CPU, 머신 사이클, 인출, 해독, 실행, 저장"
 ---
 

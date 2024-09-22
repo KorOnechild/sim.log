@@ -2,8 +2,14 @@
 import { getPosts, getCategory } from "../../scripts/utils";
 const posts = await getPosts("posts");
 const categorys = getCategory(posts);
+
 const categoryCnt = (category) => {
   const length = posts.filter((post) => post.data.category === category).length;
+  return length;
+};
+
+const seriesCnt = (series) => {
+  const length = posts.filter((post) => post.data.series === series).length;
   return length;
 };
 ---
@@ -11,16 +17,54 @@ const categoryCnt = (category) => {
 <div class="category">
   <h3>Categorys</h3>
   <ul>
-    <a href="/"><li>전체 ({posts.length})</li></a>
+    <a href="/"><li><span id="rainbow">전체 ({posts.length})</span></li></a>
     {
-      categorys.map((category) => (
-        <a href={`/category/${category}`}>
-          <li>
-            {category} ({categoryCnt(category)})
-          </li>
-        </a>
-      ))
+      Array.from(categorys).map(([category, seriesSet]) => {
+        return (
+          <>
+            <a href={`/category/${category}`}>
+              <li>
+                <span id="rainbow">{category} ({categoryCnt(category)})</span>
+              </li>
+            </a>
+            <ul>
+              {Array.from(seriesSet).map((series) => {
+                // Set 내부 값이 undefined인지 확인
+                if (series !== undefined) {
+                  return (
+                    <a href={`/series/${series}`}>
+                      <li>
+                        <span id="rainbow">[{series}] ({seriesCnt(series)})</span>
+                      </li>
+                    </a>
+                  );
+                }
+              })}
+            </ul>
+          </>
+        );
+      })
     }
+    <!-- {
+      // categorys.map((category) => (
+      //   <a href={`/category/${category}`}>
+      //     <li>
+      //       {category} ({categoryCnt(category)})
+      //     </li>
+      //   </a>
+      // ))
+      Array.from(categorys).map(([category, seriesSet]) => {
+        let temp = <li>{category}</li>;
+        if (seriesSet !== undefined) {
+          temp += <ul>
+            {Array.from(seriesSet).map((series) => {
+              <li>{series}</li>;
+            })}
+          </ul>;
+        }
+        return temp
+      })
+    } -->
   </ul>
 </div>
 <style>
@@ -50,12 +94,25 @@ const categoryCnt = (category) => {
   }
 
   .category > ul > a > li {
-    padding: 5px 20px 5px 10px;
+    padding: 1px 20px 1px 10px;
     margin-top: 5px;
     border-radius: 10px;
   }
 
   .category > ul > a > li::marker {
     content: "";
+  }
+
+  /* series */
+  .category > ul > ul > a >  li {
+    padding: 1px 5px 1px 5px;
+    border-radius: 10px;
+  }
+  .category > ul > ul {
+    padding-left: 40px;
+  }
+
+  .category > ul > ul > a > li::marker {
+    content: "+--";
   }
 </style>

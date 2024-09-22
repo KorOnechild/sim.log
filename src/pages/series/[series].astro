@@ -10,14 +10,24 @@ import { getPosts, getCategory } from "../../scripts/utils";
 export async function getStaticPaths() {
   const posts = await getPosts("posts");
   const categorys = getCategory(posts);
-  return Array.from(categorys).map(([category]) => ({
-    params: { category: category },
-    props: {
-      posts: {
-        data: [...posts.filter((post) => post.data.category === category)],
-      },
-    },
-  }));
+  let data = [];
+  categorys.forEach((seriesSet) => {
+    seriesSet.forEach((series) => {
+      if (series !== undefined) {
+        data.push({
+          params: { series: series },
+          props: {
+            posts: {
+              data: [
+                ...posts.filter((post) => post.data.series === series),
+              ],
+            },
+          },
+        });
+      }
+    });
+  });
+  return data;
 }
 
 const { posts } = Astro.props;

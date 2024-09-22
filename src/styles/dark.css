@@ -19,13 +19,13 @@
       #rainbow {
         background: repeating-linear-gradient(
           -70deg,
-          #1a2980,
-          #1976d2,
-          #2024ad,
-          #4a00e0,
-          #9723c9,
-          #8e2de2,
-          #1a2980 75%
+          #3b82f6,
+          #48a9e6,
+          #3a7bd5,
+          #6a5acd,
+          #4b0082,
+          #5d4c86,
+          #3b82f6 75%
         );
         background-size: 450%;
         background-clip: text;
@@ -88,9 +88,9 @@
     }
 
     /* Category.astro */
-    .category > ul > a > li:hover {
+    /* .category > ul > a > li:hover {
       background-color: #121212;
-    }
+    } */
 
     /* Comment.astro */
     .comment-container {
