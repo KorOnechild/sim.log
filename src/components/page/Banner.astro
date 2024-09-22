@@ -28,7 +28,7 @@ const subjectColor = {
     </div>
     <!-- TODO: a태그로 카테고리 목록으로 이동 -->
     <div class="sb-cate">
-      {post.data.category}
+      {post.data.category}{post.data.series !== undefined ? `/[${post.data.series}]` : ``}
     </div>
   </div>
   }

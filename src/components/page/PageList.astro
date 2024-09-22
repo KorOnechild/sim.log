@@ -9,23 +9,33 @@ const { page } = Astro.props;
 
 <div class="post-container">
   {
-    page.data.map((post) => (
-      <a href={`/posts/${post.data.slug}`}>
-        <article class="post-item">
-          {/* <ImageComponent post={post} imagePath={images[post.data.cover]} /> */}
-          <div class="info-container">
-            <h2 class="title" id="rainbow">
-              {post.data.title}
-            </h2>
-            <div class="date-cate">
-              <div class="category">{post.data.category}</div>
-              <div class="date">{subDate(post.data.date)}</div>
-            </div>
-            <p class="desc">{post.data.description}</p>
-          </div>
-        </article>
-      </a>
-    ))
+    page.data.map((post) => {
+      return (
+        <>
+          <a href={`/posts/${post.data.slug}`}>
+            <article class="post-item">
+              {/* <ImageComponent post={post} imagePath={images[post.data.cover]} /> */}
+              <div class="info-container">
+                <h2 class="title" id="rainbow">
+                  {post.data.title}
+                </h2>
+                <div class="date-cate">
+                  {post.data.series !== undefined ? (
+                    <div class="category">
+                      {post.data.category}/[{post.data.series}]
+                    </div>
+                  ) : (
+                    <div class="category">{post.data.category}</div>
+                  )}
+                  <div class="date">{subDate(post.data.date)}</div>
+                </div>
+                <p class="desc">{post.data.description}</p>
+              </div>
+            </article>
+          </a>
+        </>
+      );
+    })
   }
 </div>
 <style>
