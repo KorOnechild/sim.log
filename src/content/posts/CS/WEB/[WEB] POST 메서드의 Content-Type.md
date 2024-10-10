@@ -115,7 +115,7 @@ key는 각각의 데이터 블록의 Header 부분의 `Content-Disposition`에 �
 
 ```text/plain
 POST /test HTTP/1.1
-Content-Type: multipart/form-data;boundary="------ExampleBoundary"
+Content-Type: multipart/form-data;boundary="ExampleBoundary"
 
 --ExampleBoundary
 Content-Disposition: form-data; name="name"
