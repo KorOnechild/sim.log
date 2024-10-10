@@ -111,21 +111,21 @@ key는 각각의 데이터 블록의 Header 부분의 `Content-Disposition`에 �
 
 ### HTTP 메시지
 
-마지막 boundary가 작성된 부분이 데이터 블록의 끝을 의미하며 HTTP 메시지처럼 각각의 boundary 안에도 줄바꿈으로 Header와 Body가 나뉘는 것을 알 수 있습니다.
+마지막 boundary가 작성된 부분이 데이터 블록의 끝을 의미하며 HTTP 메시지처럼 각각의 boundary 안에도 줄바꿈으로 Header와 Body가 나뉘는 것을 알 수 있습니다. boundary의 시작은 `--` 으로 시작하며 끝맺음 역시 `--`으로 마지막 부분이라는 것을 알립니다.
 
 ```text/plain
 POST /test HTTP/1.1
 Content-Type: multipart/form-data;boundary="------ExampleBoundary"
 
-------ExampleBoundary
+--ExampleBoundary
 Content-Disposition: form-data; name="name"
 
 Robbie
-------ExampleBoundary
+--ExampleBoundary
 Content-Disposition: form-data; name="age"
 
 95
-------ExampleBoundary
+--ExampleBoundary--
 ```
 
 <hr>
